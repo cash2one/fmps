@@ -1,0 +1,3 @@
+ALTER TABLE `t_s_timetask`
+	ADD COLUMN `IP_Filter` VARCHAR(50) NULL COMMENT '任务启动IP地址过滤' AFTER `UPDATE_NAME`;
+ 

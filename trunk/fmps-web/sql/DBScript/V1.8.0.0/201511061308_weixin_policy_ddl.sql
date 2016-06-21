@@ -1,0 +1,1 @@
+ALTER TABLE `weixin_policy` ADD COLUMN `premium` DECIMAL(10,2) NOT NULL COMMENT '保单原保费' AFTER `openid`;

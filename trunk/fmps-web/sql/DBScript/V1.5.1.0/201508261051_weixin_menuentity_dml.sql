@@ -1,0 +1,1 @@
+update weixin_menuentity set  `type`='view' where id='sdf37245437014434rdeer33' ;

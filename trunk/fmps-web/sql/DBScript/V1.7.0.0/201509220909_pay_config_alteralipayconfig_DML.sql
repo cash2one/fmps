@@ -1,0 +1,11 @@
+delete from pay_config where type='支付宝';
+INSERT INTO `pay_config` (`id`, `type`, `key`, `value`) VALUES ('100001', 'alipay', 'sec_id', 'MD5');
+INSERT INTO `pay_config` (`id`, `type`, `key`, `value`) VALUES ('100002', 'alipay', 'call_back_url', '${WebRoot}/pay/payController/success.do');
+INSERT INTO `pay_config` (`id`, `type`, `key`, `value`) VALUES ('100003', 'alipay', 'merchant_url', '${WebRoot}/pay/payController/order.do');
+INSERT INTO `pay_config` (`id`, `type`, `key`, `value`) VALUES ('100004', 'alipay', 'notify_url', '${WebRoot}/pay/payController/notify.do');
+INSERT INTO `pay_config` (`id`, `type`, `key`, `value`) VALUES ('100005', 'alipay', 'charset', 'utf-8');
+INSERT INTO `pay_config` (`id`, `type`, `key`, `value`) VALUES ('100006', 'alipay', 'seller_account_name', 'finance@fubon.com.cn');
+INSERT INTO `pay_config` (`id`, `type`, `key`, `value`) VALUES ('100007', 'alipay', 'req_url', '/fo/offlinepay/alipayapi');
+INSERT INTO `pay_config` (`id`, `type`, `key`, `value`) VALUES ('100008', 'alipay', 'quato', '3000');
+INSERT INTO `pay_config` (`id`, `type`, `key`, `value`) VALUES ('12345678', 'alipay', 'key', 'd037y4m4cc6a3ut4nlci2nocr7ognoqy');
+INSERT INTO `pay_config` (`id`, `type`, `key`, `value`) VALUES ('123456789', 'alipay', 'partner', '2088411867409662');

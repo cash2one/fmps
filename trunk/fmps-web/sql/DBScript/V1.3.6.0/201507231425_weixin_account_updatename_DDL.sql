@@ -1,0 +1,1 @@
+update weixin_account set logo_imgurl='/plug-in/cashcoupon/images/logo.jpg',accountname='富邦财险' where status=1

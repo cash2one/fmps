@@ -1,0 +1,1 @@
+update t_s_timetask set CRON_EXPRESSION = '0 0 1,8,11 31 1 ? 2016' where id='lunarNewYearCoreUnderwrite160201';

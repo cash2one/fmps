@@ -1,0 +1,15 @@
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650000','报案','申请理赔','报案受理');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650001','调度','申请理赔','报案受理');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650002','查勘','确认损失','正在确认损失');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650003','立案','确认损失','正在确认损失');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650004','定损','确认损失','正在确认损失');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650005','核损','确认损失','正在确认损失');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650006','单证','收集材料','正在收集材料');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650007','理算','收集材料','材料收集完成');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650008','核赔','赔款支付','正在赔付');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650009','结案','已结束','赔款已支付');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650010','注销/拒赔',null,null);
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650011','特殊赔案（部分赔案）','赔款支付','正在赔付');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650012','财产定损','确认损失','正在确认损失');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650013','人伤定损','确认损失','正在确认损失');
+insert into weixin_claim_flowin_desc_map (ID,core_nodename,weixin_nodename,weixin_nodedesc) values ('8a828e4f4fa5cbcc014fa5cbf9650014','计算书','收集材料','材料收集完成');

@@ -1,0 +1,1 @@
+update pay_config config set config.value ='${WebRoot}/pay/payController.do?showPolicy' where config.type='alipay' and  config.key ='merchant_url'

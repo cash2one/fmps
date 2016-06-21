@@ -1,0 +1,1 @@
+alter table weixin_newcar_licenseno add applicationNo  varchar(30);

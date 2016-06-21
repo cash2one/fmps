@@ -1,0 +1,2 @@
+ALTER TABLE `weixin_cashcouponhistory`
+	ADD UNIQUE INDEX `INX_WEIXIN_CASHCOUPONHISTORY_CASHCOUPONID` (`cashcouponid`);

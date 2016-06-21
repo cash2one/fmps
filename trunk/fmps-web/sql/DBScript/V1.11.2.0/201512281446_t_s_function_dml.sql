@@ -1,0 +1,3 @@
+INSERT INTO T_S_FUNCTION(id,functioniframe,functionlevel,functionname,functionorder,functionurl,parentfunctionid,iconid,desk_iconid) VALUES('8a828e5051cc52b70151cc5a73540030',NULL,2,'查看导入日志','02','mailsending/toTaiwanMailController.do?toImportExcelLogIndex','8a828e5051cc52b70151cc59b04e002d','4028d881436d514601436d5214b30002',NULL);
+
+INSERT INTO T_S_FUNCTION(id,functioniframe,functionlevel,functionname,functionorder,functionurl,parentfunctionid,iconid,desk_iconid) VALUES('8a828e5051cca1d90151cca332c60000',NULL,2,'操作日志','03','mailsending/toTaiwanMailController.do?toEmailOperateLogIndex','8a828e5051cc52b70151cc59b04e002d','4028d881436d514601436d5214b30002',NULL)

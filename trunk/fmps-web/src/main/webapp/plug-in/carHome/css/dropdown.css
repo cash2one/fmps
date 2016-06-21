@@ -1,0 +1,283 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  font: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: "Microsoft Yahei", Verdana, Arial, Helvetica, sans-serif;
+}
+html {
+  font-size: 13px;
+  height: 100%;
+  -webkit-font-smoothing: antialiased
+}
+body {
+  color: #333;
+  line-height: 1;
+  background: #fff;
+   
+}
+body.blue { background: #efeff4; }
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section { display: block; }
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+em,
+i,
+p {
+  margin:0;
+  padding:0;
+  list-style: none;
+  font-style: normal;
+}
+li {
+  font-size: 13px;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit
+}
+:focus { outline: 0; }
+a {
+  color: #333;
+  tap-highlight-color: rgba(0,0,0,0);  
+  focus-ring-color: rgba(0, 0, 0, 0);  
+  -webkit-tap-highlight-color: rgba(0,0,0,0);  
+  -webkit-focus-ring-color: rgba(0, 0, 0, 0);  
+  -moz-tap-highlight-color: rgba(0,0,0,0);  
+  -moz-focus-ring-color: rgba(0, 0, 0, 0); 
+}
+a:hover { color: #000; }
+a:focus { outline: none; }
+a,
+a:hover,
+a:active {
+  outline: 0;
+  text-decoration: none;
+}
+
+
+/* ===== fb-dropdown分类下拉 ===== */
+.fb-dropdown {
+  position:absolute;
+  z-index: 1040;
+  height: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  width:100%;
+  margin-top: 1px;
+}
+.fb-dropdown dt { overflow: hidden }
+.fb-dropdown dt a {
+  position: relative;
+  float: left;
+  width: 33%;
+  height: 40px;
+  line-height: 40px;
+  color: #333;
+  font-size: 13px;
+  text-align: center;
+}
+.fb-dropdown dt a:after {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  margin-top: -4px;
+  margin-left: 25%;
+  width: 10px;
+  height: 10px;
+  display: block; 
+  content: ' ';
+  background-image: url(../images/triangle.png) ;
+  background-size:10px 10px;
+  background-repeat: no-repeat;
+  /*-webkit-transform: rotate(135deg);*/
+  -webkit-transition: width 0.3s, -webkit-transform 0.3s;
+  -moz-transition: width 0.3s, -moz-transform 0.3s;
+  transition: width 0.3s, transform 0.3s;
+}
+.fb-dropdown dt .up {
+  color: #ff8e3f;
+  border-bottom: 2px solid #ff8e3f;
+}
+/* .fb-dropdown dt .up:after {
+  margin-top: 0;
+  border: #ff8e3f solid;
+  border-width: 1px 1px 0 0;
+  -webkit-transition: width 0.3s, -webkit-transform 0.3s;
+  -moz-transition: width 0.3s, -moz-transform 0.3s;
+  transition: width 0.3s, transform 0.3s;
+  -webkit-transform: rotate(-45deg);
+} */
+.fb-dropdown dt a:before {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: block;
+  width: 1px;
+  height: 30px;
+  background-color: #ebebeb;
+  content: ' ';
+}
+.fb-dropdown dd { position: relative; }
+/* ===== slide-area ===== */
+.slide {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 1040;
+  display: none; 
+  width: 100%;
+  height:300px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+.second-stage{
+	width: 50%;
+}
+.slide li {
+  display: block;
+  height: 50px;
+  border-bottom: 1px solid #eee;
+}
+.slide li a {
+  display: block;
+  padding: 0 30px;
+  height: 50px;
+  background-color: transparent;
+  line-height: 50px;
+
+}
+.second-stage li .keep-right:after {
+  position: absolute;
+  margin-top: 23px;
+  margin-left: 5%;
+  width: 5px;
+  height: 5px;
+  border: #666 solid;
+  border-width: 1px 1px 0 0;
+  content: ' ';
+  -webkit-transform: rotate(45deg);
+}
+.slide li a:hover,
+.slide li a.selected { background-color: #f6f6f6;color:#ff8e3f; }
+
+.slide li a.select { background-color: #fff;color:#333; }
+
+/* fb-secondary-dropdown */
+.fb-secondary-dropdown {
+  float:left;
+  position: relative;
+  right: -200px; 
+  z-index: 1040;
+  top: 0px;
+  left: 50%;
+  display: none; 
+  width: 50%;
+  height:300px;
+  overflow-y: auto;
+  background-color: #f6f6f6;
+}
+
+.fb-secondary-dropdown li {
+  display: block;
+  height: 50px;
+  border-bottom: 1px solid #eee;
+}
+.fb-secondary-dropdown li a {
+  display: block;
+  padding: 0 30px;
+  height: 50px;
+  background-color: transparent;
+  line-height: 50px;
+}
+.fb-secondary-dropdown li a:hover,
+.fb-secondary-dropdown li a.selected { background-color: #eee;color:#ff8e3f; }
+
+.fb-secondary-dropdown li a.select { background-color: #fff; color:#333;}
+.keep-right{
+  float:right;
+}
+
+
+
+
+
+/* ===== fb-singleDropdown分类下来 ===== */
+.fb-singleDropdown {
+  position:absolute;
+  z-index: 1040;
+  margin-top: 1px;
+}
+
+.citySlide {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 1041;
+  display: none; 
+  width: 100%; 
+  overflow-y: auto;
+  background-color: #fbfbfb;
+}
+.citySlide li {
+    display: block;
+    height: 40px;
+    border: 1px solid #e8e8e8;
+    margin: 7px 4px 2px 4px;
+    width: 30.6%;
+    float: left;
+    border-radius: 2px;
+}
+.citySlide li.citySelected {
+/*   border: 2px solid #ff8e3f;
+  color : #ff8e3f; */
+  background-color:#e3e3e3;
+}
+.citySlide li a {
+  display: block;
+  padding: 0 20px;
+  height: 38px;
+  background-color: #fff;
+  line-height: 35px;
+  text-align:center;
+
+}
+.citySlide li a.citySelected {
+   /* height: 36px;
+     color: #ff8e3f; */
+}
+
+/*头部城市选择下拉框距离顶部高度*/
+.margin-header{
+  top: 40px;
+}

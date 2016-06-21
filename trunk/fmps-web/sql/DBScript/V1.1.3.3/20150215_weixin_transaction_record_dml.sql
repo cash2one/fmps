@@ -1,0 +1,2 @@
+ALTER TABLE `weixin_transaction_record`	CHANGE COLUMN `reqDateTime` `reqDateTime` TIMESTAMP(6) NOT NULL  ;
+ALTER TABLE `weixin_transaction_record`	CHANGE COLUMN `respDateTime` `respDateTime` TIMESTAMP(6) NOT NULL ;

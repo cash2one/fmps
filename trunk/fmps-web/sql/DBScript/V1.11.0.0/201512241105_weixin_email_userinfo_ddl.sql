@@ -1,0 +1,19 @@
+CREATE TABLE `weixin_email_userinfo` (
+	`id` VARCHAR(50) NOT NULL,
+	`name` VARCHAR(100) NULL DEFAULT NULL COMMENT '姓名',
+	`identifynumber` VARCHAR(20) NULL DEFAULT NULL COMMENT '身份证号',
+	`sex` VARCHAR(10) NULL DEFAULT NULL COMMENT '性别',
+	`email` VARCHAR(100) NULL DEFAULT NULL COMMENT '邮箱',
+	`sendTime` DATETIME NULL DEFAULT NULL COMMENT '邮件发送时间',
+	`sendStatus` VARCHAR(10) NULL DEFAULT '0' COMMENT '邮件发送状态，1表示发送成功，2表示发送失败，0表示未发送',
+	`insuranceNo` VARCHAR(100) NULL DEFAULT NULL COMMENT '赠险单号',
+	`importBatchId` VARCHAR(50) NULL DEFAULT NULL COMMENT '导入批次号',
+	`importTime` DATETIME NULL DEFAULT NULL COMMENT '操作时间',
+	`importOperator` VARCHAR(100) NULL DEFAULT NULL COMMENT '操作人',
+	`operatelogId` VARCHAR(50) NULL DEFAULT NULL COMMENT '操作日志id',
+	`huodongid` VARCHAR(32) NULL DEFAULT NULL COMMENT '活动id',
+	PRIMARY KEY (`id`)
+)
+COMMENT='邮箱用户信息表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;

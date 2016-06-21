@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+         
+<mapping>
+	<class-a>cn.com.fubon.webservice.entity.request.FbWSRequest</class-a>
+	<class-b>cn.com.fubon.webservice.externl.coresystem.entity.WeixinBindRequest</class-b>
+	<field>
+		<a>requestHead.transcationSeqNo</a>
+		<b>sender.transactionNo</b>
+	</field>
+	<field>
+		<a>requestHead.transcationCode</a>
+		<b>sender.messageType</b>
+	</field>
+	<field>
+		<a>requestHead.transcationDate</a>
+		<b>sender.sendDate</b>
+	</field>
+	<field>
+		<a>requestHead.transcationTime</a>
+		<b>sender.sendTime</b>
+	</field>
+	<field>
+		<a>requestHead.clientCode</a>
+		<b>sender.clientCode</b>
+	</field>
+	<field>
+		<a>requestBody</a>
+		<b>insuredPerson</b>
+	</field>	
+</mapping>  
+
+<mapping>
+	<class-a>cn.com.fubon.webservice.entity.request.FbWSRequest</class-a>
+	<class-b>cn.com.fubon.webservice.externl.coresystem.entity.WeixinNewCarRequest</class-b>
+	<field>
+		<a>requestHead.transcationSeqNo</a>
+		<b>sender.transactionNo</b>
+	</field>
+	<field>
+		<a>requestHead.transcationCode</a>
+		<b>sender.messageType</b>
+	</field>
+	<field>
+		<a>requestHead.transcationDate</a>
+		<b>sender.sendDate</b>
+	</field>
+	<field>
+		<a>requestHead.transcationTime</a>
+		<b>sender.sendTime</b>
+	</field>
+	<field>
+		<a>requestHead.clientCode</a>
+		<b>sender.clientCode</b>
+	</field>
+	<field>
+		<a>requestBody</a>
+		<b>policyInfo</b>
+	</field>	
+</mapping> 
+
+<mapping>
+	<class-a>cn.com.fubon.webservice.externl.coresystem.entity.CommonResponse</class-a>
+	<class-b>cn.com.fubon.webservice.entity.response.FbWSResponse</class-b>
+	<field>
+		<a>sender.messageType</a>
+		<b>responseHead.transcationCode</b>
+	</field>
+	<field>
+		<a>sender.auditStruts</a>
+		<b>responseHead.transResponse.returnCode</b>
+	</field>
+	<field>
+		<a>sender.transactionNo</a>
+		<b>responseHead.transcationSeqNo</b>
+	</field>
+	<field>
+		<a>sender.clientCode</a>
+		<b>responseHead.clientCode</b>
+	</field>
+	<field>
+		<a>sender.auditMessage</a>
+		<b>responseHead.transResponse.returnMessage</b>
+	</field>	
+</mapping> 
+
+<mapping>
+	<class-a>cn.com.fubon.webservice.externl.coresystem.entity.CommonResponseNewCar</class-a>
+	<class-b>cn.com.fubon.webservice.entity.response.FbWSResponse</class-b>
+	<field>
+		<a>sender.messageType</a>
+		<b>responseHead.transcationCode</b>
+	</field>
+	<field>
+		<a>sender.auditStruts</a>
+		<b>responseHead.transResponse.returnCode</b>
+	</field>
+	<field>
+		<a>sender.transactionNo</a>
+		<b>responseHead.transcationSeqNo</b>
+	</field>
+	<field>
+		<a>sender.clientCode</a>
+		<b>responseHead.clientCode</b>
+	</field>
+	<field>
+		<a>sender.auditMessage</a>
+		<b>responseHead.transResponse.returnMessage</b>
+	</field>	
+</mapping> 
+
+<mapping date-format="yyyy-MM-dd">
+	<class-a>cn.com.fubon.webservice.externl.telesalesystem.entity.TelesaleResponse</class-a>
+	<class-b>cn.com.fubon.pay.entity.WeiXinOfflineOrderInfo</class-b>
+	<field>
+		<a>telesaleResponseHead.classCode</a>
+		<b>classCode</b>
+	</field>
+	<field>
+		<a>telesaleResponseHead.payCode</a>
+		<b>payCode</b>
+	</field>
+	<field>
+		<a>telesaleResponseHead.payCodeStatus</a>
+		<b>payCodeStatus</b>
+	</field>
+	<field>
+		<a>telesaleResponseProposal.insuredName</a>
+		<b>insuredName</b>
+	</field>
+	<field>
+		<a>telesaleResponseProposal.sumPremium</a>
+		<b>sumPremium</b>
+	</field>
+	<field>
+		<a>telesaleResponseProposal.startDate</a>
+		<b>policyStartDate</b>
+	</field>	
+	<field>
+		<a>telesaleResponseProposal.licenseNo</a>
+		<b>licenseNo</b>
+	</field>
+	<field>
+		<a>telesaleResponseProposal.identifyNumber</a>
+		<b>identifyNumber</b>
+	</field>
+</mapping> 
+
+<mapping>
+	<class-a>cn.com.fubon.webservice.externl.telesalesystem.entity.PrpTitemkind</class-a>
+	<class-b>cn.com.fubon.pay.entity.WeiXinOfflineOrderDetail</class-b>
+	<field>
+		<a>kindName</a>
+		<b>kindName</b>
+	</field>
+	<field>
+		<a>amount</a>
+		<b>amount</b>
+	</field>
+	<field>
+		<a>premium</a>
+		<b>premium</b>
+	</field>
+	<field>
+		<a>riskKind</a>
+		<b>riskKind</b>
+	</field>
+	<field>
+		<a>nonDeductible</a>
+		<b>nonDeductible</b>
+	</field>
+</mapping> 
+
+<mapping>
+	<class-a>cn.com.fubon.webservice.entity.request.FbWSRequest</class-a>
+	<class-b>cn.com.fubon.webservice.externl.coresystem.entity.ClaimRequest</class-b>
+	<field>
+		<a>requestHead.transcationSeqNo</a>
+		<b>sender.transactionNo</b>
+	</field>
+	<field>
+		<a>requestHead.transcationDate</a>
+		<b>sender.transactionDate</b>
+	</field>
+	<field>
+		<a>requestHead.transcationTime</a>
+		<b>sender.transactionTime</b>
+	</field>	
+	<field>
+		<a>requestBody</a>
+		<b>body</b>
+	</field>	
+</mapping>
+
+<mapping>
+	<class-a>cn.com.fubon.webservice.entity.request.FbWSRequest</class-a>
+	<class-b>cn.com.fubon.webservice.externl.coresystem.entity.ClaimNotCarRequest</class-b>
+	<field>
+		<a>requestHead.transcationSeqNo</a>
+		<b>sender.transactionNo</b>
+	</field>
+	<field>
+		<a>requestHead.transcationDate</a>
+		<b>sender.transactionDate</b>
+	</field>
+	<field>
+		<a>requestHead.transcationTime</a>
+		<b>sender.transactionTime</b>
+	</field>	
+	<field>
+		<a>requestBody</a>
+		<b>body</b>
+	</field>	
+</mapping>
+
+<mapping>
+	<class-a>cn.com.fubon.webservice.externl.coresystem.entity.ClaimResponseSender</class-a>
+	<class-b>cn.com.fubon.webservice.entity.response.ResponseHead</class-b>
+	<field>
+		<a>transactionNo</a>
+		<b>transcationSeqNo</b>
+	</field>
+	<field>
+		<a>responseCode</a>
+		<b>transResponse.returnCode</b>
+	</field>
+	<field>
+		<a>errorMessage</a>
+		<b>transResponse.returnMessage</b>
+	</field>		
+</mapping>        
+
+<!-- 核心承保：内部请求对象转外部请求对象 -->
+<mapping>
+	<class-a>cn.com.fubon.webservice.entity.request.FbWSRequest</class-a>
+	<class-b>cn.com.fubon.webservice.externl.coresystemUnderwrite.entity.UnderwriteTransaction</class-b>
+	<field>
+		<a>requestHead</a>
+		<b>head</b>
+	</field>
+	<field>
+		<a>requestBody</a>
+		<b>body</b>
+	</field>
+	<field>
+		<a>requestHead.transcationCode</a>
+		<b>head.requestType</b>
+	</field>
+	<field>
+		<a>requestHead.transcationSeqNo</a>
+		<b>head.transactionno</b>
+	</field>
+	<field>
+		<a>requestHead.serverCode</a>
+		<b>head.touser</b>
+	</field>
+	<field>
+		<a>requestHead.clientCode</a>
+		<b>head.operatesite</b>
+	</field>
+	<field>
+		<a>requestHead.transcationDate</a>
+		<b>head.requestdate</b>
+	</field>
+</mapping>
+
+<!-- 核心承保：外部响应对象转内部响应对象 -->
+<mapping>
+	<class-a>cn.com.fubon.webservice.externl.coresystemUnderwrite.entity.response.UnderwriteResponse</class-a>
+	<class-b>cn.com.fubon.webservice.entity.response.FbWSResponse</class-b>
+	<field>
+		<a>head.transactionno</a>
+		<b>responseHead.transcationSeqNo</b>
+	</field>
+	<field>
+		<a>head.requesttype</a>
+		<b>responseHead.transcationCode</b>
+	</field>
+	<field>
+		<a>head.returncode</a>
+		<b>responseHead.transResponse.returnCode</b>
+	</field>
+	<field>
+		<a>head.returnmessage</a>
+		<b>responseHead.transResponse.returnMessage</b>
+	</field>
+</mapping>
+
+<!-- 核心承保：handler处理head -->
+<mapping>
+	<class-a>cn.com.fubon.webservice.externl.coresystemUnderwrite.entity.response.UnderwriteResponseHead</class-a>
+	<class-b>cn.com.fubon.webservice.entity.response.ResponseHead</class-b>
+	<field>
+		<a>transactionno</a>
+		<b>transcationSeqNo</b>
+	</field>
+	<field>
+		<a>requesttype</a>
+		<b>transcationCode</b>
+	</field>
+	<field>
+		<a>returncode</a>
+		<b>transResponse.returnCode</b>
+	</field>
+	<field>
+		<a>returnmessage</a>
+		<b>transResponse.returnMessage</b>
+	</field>
+</mapping>
+<!-- 核心承保：handler处理body -->
+<mapping>
+	<class-a>cn.com.fubon.webservice.externl.coresystemUnderwrite.entity.response.UnderwriteResponseBody</class-a>
+	<class-b>cn.com.fubon.webservice.entity.response.FbCoreUnderwriteResponseBody</class-b>
+	<field>
+		<a>policyno</a>
+		<b>policyno</b>
+	</field>
+	<field>
+		<a>applicustomercode</a>
+		<b>applicustomercode</b>
+	</field>
+</mapping>
+
+</mappings>

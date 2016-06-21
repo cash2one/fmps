@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background-color:#fff; font-family:"黑体"; font-size:12px;}
+   img {
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0px none;
+       }
+
+    .am-list {
+      margin: 0;
+    }
+
+    .am-list > li {
+      background: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8); padding:10px 0px 10px 0px;
+    }
+
+    .pull-action {
+      text-align: center;
+      height: 45px;
+      line-height: 45px;
+      color: #999;
+    }
+
+    .pull-action .am-icon-spin {
+      display: none;
+    }
+
+    .pull-action.loading .am-icon-spin {
+      display: block;
+    }
+
+    .pull-action.loading .pull-label {
+      display: none;
+    }
+	.am-btn-primary {
+  color: #222;
+  background-color: #fff;
+  border-color: #fff;
+}
+.am-btn {
+  font-size: 1.4rem;
+  padding: 0.1em 0.1em;
+     }
+	 .am-topbar {
+  min-height: 50px;}
+.am-header .am-header-title {
+  margin:0 15%
+  ;}
+  .fb_Repair{ padding:0 15px; clear:both; height:auto; width:100%;}
+  .fb_Repair_table_right_text_2{ font-size:0.825em; font-family:"微软雅黑"; color:#888; border-bottom:1px solid #dedede; height:35px; padding-left:15px; padding-top:5px;}
+  .fb_Comment{ padding:15px 15px; clear:both; height:auto; width:100%; border-bottom:1px solid #dedede; float:left;}
+  .fb_Comment_img{
+-webkit-border-radius:50px;
+-moz-border-radius:50px;
+-o-border-radius:50px;
+border-radius:50px; 
+background:url(images/futai_index_pro.jpg) scroll center no-repeat; 
+height:50px; 
+width:50px;
+float:left;
+}
+.fb_Comment_text{ float:left; width:80%; padding-left:10px; color:#222222;}
+.comment{ padding-bottom:10px; font-size:14px; border-bottom:1px solid #dedede;}
+.factory_button{ height:50px; border-bottom:1px solid #e8e8e8; width:100%; float:left;}
+.factory_button .factory_button_left{ float:left; width:92%; font-size:24px; color:#e20404; text-indent:14px;}
+.factory_button .factory_button_right{ float:left; width:20px;}
+.factory_button .factory_button_right .button{  background:#fff; text-align:center; color:#e20404; border-radius:5px;  margin-top:12px; font-size:12px; border: 1px dotted #e20404;}
+.factory_button .factory_button_right .button_over{  background:#999; text-align:center; color:#fff; border-radius:5px;  margin-top:8px; font-size:12px; padding:3px; border: 1px dotted #999;}
+.factory_add{ height:50px; border-bottom:1px solid #e8e8e8; width:100%; clear:both;}
+.factory_add .factory_add_img{ float:left; width:10%; padding-left:7px; padding-top:15px;}
+.factory_add .factory_add_text{ float:left; width:89%; padding-top:14px; font-size:14px;}
+.factory_add .factory_add_right{ float:left; width:1%;}
+.Double_activity_xian{ background-color:#f5f5f5; border-bottom:1px solid #e8e8e8;  height:10px; clear:both;}
+.Double_activity_xian_bottom{ background-color:#f5f5f5; border-bottom:1px solid #e8e8e8;  height:20px; clear:both;}
+.Double_gifts{ height:40px; text-align:left; border-bottom:1px solid #e8e8e8;}
+.Double_gifts .gifts_img{ float:left; width:10%; padding-left:7px; padding-top:10px;}
+.Double_gifts .gifts_text{ float:left; width:89%; padding-top:9px; font-size:14px;}
+.Double_gifts_coupon{ height:40px; text-align:left; border-bottom:1px solid #e8e8e8;}
+.Double_gifts_coupon .gifts_coupon{ float:left; width:95%; padding-left:10px; padding-top:10px;}
+.Double_gifts_coupon .gifts_text{ float:left; width:5%; padding-top:9px; }
+.Double_gifts_more{ height:40px; text-align:center; border-bottom:1px solid #e8e8e8; color:#ff4a90; padding-top:8px; font-size:14px;}

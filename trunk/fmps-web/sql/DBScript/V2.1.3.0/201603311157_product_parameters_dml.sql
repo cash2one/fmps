@@ -1,0 +1,1 @@
+INSERT INTO `product_parameters` (`id`, `productid`, `type`, `param_key`, `param_value`, `description`, `planid`) VALUES (15, 'ff8080814fd59b44014fd94100e40031', 'general', 'showCarMessage', 'Y', '显示车辆相关信息', 'ff8080814fd59b44014fd963d7ee0035');

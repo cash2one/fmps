@@ -1,0 +1,3 @@
+update weixin_gasolinegift g set g.mobile=(select z.mobile from weixin_gzuserinfo z where g.openid = z.openid) where g.mobile is null and g.applyTime > 2015-12-23;
+update weixin_gasolinegift g set g.licenseno=(select z.licenseno from weixin_gzuserinfo z where g.openid = z.openid) where g.licenseno is null and g.applyTime > 2015-12-23;
+update weixin_gasolinegift g set g.username=(select z.customercname from weixin_gzuserinfo z where g.openid = z.openid) where g.username is null and g.applyTime > 2015-12-23;

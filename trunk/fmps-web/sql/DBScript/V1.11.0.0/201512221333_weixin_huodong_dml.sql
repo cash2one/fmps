@@ -1,0 +1,1 @@
+update weixin_huodong t set t.totalamount = 0 where t.totalamount is null;

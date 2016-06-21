@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* CSS Document */
+ 
+ .am-accordion-content {
+  margin-top: 0;
+  padding: 0.8rem 1rem 1.2rem;
+  font-size: 1.4rem;
+   border-bottom: solid; border-width: 1px 0px; border-image: none; border-color: #DEDEDE; background-color:#FFFFFF;
+}
+
+  .am-u-md-pull-4 {
+    right: 0.33333333%; text-align:center;
+  }
+  
+    .am-u-sm-9 {
+    width: 90%;
+  }
+  
+  [class*="am-u-"] {
+  width: 100%;
+  padding-left: 0.5rem;
+  padding-right:0.5rem;
+  float: left;
+  position: relative;
+}
+
+ .am-btn-primary{ width:91%;}
+ 
+ .daolujiuyuan{ background:#FcFcFc; margin:0 auto;}
+ .daolu_1{ background:#FFFFFF; float:left; margin-top:10px; padding:5px 0px 5px 0px;}
+ .daolu_1_img{ float:left; width:24%; text-align:center; vertical-align:middle;}
+ .daolu_1_text{font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; float:left; width:75%; font-size:14px;}
+ .daolu_1_title{font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; font-size:14px;  color:#313131;}
+ .daolu_1_center{ font-size:12px; text-align:left; color:#979696; line-height:18px;}
+ .text_tips{ color:#089be0;}
+ 
+ .daolu_2{ background:#FFFFFF; float:left; width:100%;  padding:15px 0px 5px 0px;}
+ .daolu_2_img{ float:left; width:24%; text-align:center; vertical-align:middle;}
+ .daolu_2_text{font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; float:left; width:75%; font-size:14px;}
+ .daolu_2_title{font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; font-size:14px;  color:#313131;}
+ .daolu_2_center{ font-size:12px; text-align:left; color:#979696; line-height:18px;}
+ 
+ .am-u-sm-6{ width:100%;}
+ 
+ .shangmenjiuyuan{ background:#FcFcFc; margin:0 auto;}
+ .shangmen_1{ background:#FFFFFF; float:left; margin-top:10px; padding:5px 0px 5px 0px;}
+ .shangmen_1_img{ float:left; width:24%; text-align:center; vertical-align:middle;}
+ .shangmen_1_text{font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; float:left; width:75%; font-size:14px;}
+ .shangmen_1_title{font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; font-size:14px; color:#313131; padding-top:5px; line-height:20px;}
+ .shangmen_1_center{ font-size:12px; text-align:left; color:#979696; line-height:18px;}
+ .text_tips{ color:#089be0;}
+ 
+ .shangmen_2{ background:#FFFFFF; float:left; width:100%;  padding:5px 0px 5px 0px;}
+ .shangmen_2_img{ float:left; width:24%; text-align:center; vertical-align:middle;}
+ .shangmen_2_text{font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; float:left; width:75%; font-size:14px;}
+ .shangmen_2_title{font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; font-size:14px; padding-bottom:8px; color:#313131; padding-top:15px;}
+ .shangmen_2_center{ font-size:12px; text-align:left; color:#979696; line-height:18px;}
+ 
+ .user_bg{ background:url(../images/uers_1.jpg) scroll repeat center; height:180px; width:auto;}
+ .user_touxiang{border:3px solid #fff; width:100px; height:100px; margin:0 auto; -webkit-border-radius:50px; -moz-border-radius:50px; -o-border-radius:50px;
+border-radius:50px;}
+ .name_text{ text-align:center; color:#fff; line-height:60px;}
+ .infometion_title{ background-color:#f4f4f4; width:100%; height:40px; text-align:left; color:#626164; font-size:16px; padding:5px 0px 0px 5px;}
+ .infometion_up{ float:left; width:100%;}
+ .infometion_up .up_1{ float:left; width:33%; height:100px; border-right:solid 1px #f4f4f4; border-bottom:solid 1px #f4f4f4; text-align:center;}
+ .infometion_up .up_2{ float:left; width:33%; height:100px; border-right:solid 1px #f4f4f4; border-bottom:solid 1px #f4f4f4; text-align:center;}
+ .infometion_up .up_3{ float:left; width:33%; height:100px; border-bottom:solid 1px #f4f4f4; text-align:center;}
+ .infometion_down{ float:left; width:100%;}
+ .infometion_down .down_1{ float:left; width:33%; height:100px; border-right:solid 1px #f4f4f4; border-bottom:solid 1px #f4f4f4; text-align:center;}
+ .infometion_down .down_2{ float:left; width:33%; height:100px; border-right:solid 1px #f4f4f4; border-bottom:solid 1px #f4f4f4; text-align:center;}
+ .infometion_down .down_3{ float:left; width:33%; height:100px; border-bottom:solid 1px #f4f4f4; text-align:center;}
+ 
+ .Service_title{ background-color:#f4f4f4; width:100%; height:40px; text-align:left; color:#626164; font-size:16px; padding:5px 0px 0px 5px;}
+ .Service_center{ height:140px; border-bottom:1px solid #f4f4f4; border-top:1px solid #f4f4f4; width:100%; background-color:#fff;}
+ .Service_center_float{ width:100%; float:left; height:40px; padding-top:10px; margin-bottom:7px;}
+ .Service_icon{ width:15%; float:left; text-align:center;}
+ .Service_text{ width:85%; float:left; border-bottom:1px #f4f4f4 solid; padding-bottom:5px; line-height:30px;}
+ .Service_center_float_1{ width:100%; float:left; height:50px; padding-top:7px;}
+ .Service_icon_1{ width:15%; float:left; text-align:center;}
+ .Service_text_1{ width:85%; float:left; padding-bottom:3px; line-height:30px;}
+ 
+ .am-cf:before,.am-cf:after {content: " "; display:none;}
+ .am-form-group {margin-bottom: 0.2rem;}
+ .am-tabs-d2 .am-tabs-nav {background-color: #fcfcfc;}
+ .tips_center{ margin:0 auto; width:100%; text-align:center;}
+ .tips_center_text{color:#4a4b4d; text-align:center;}
+ .tips_center_text_2{ width:30%; height:auto; text-align:center; -webkit-border-radius:5px; -moz-border-radius:5px; -o-border-radius:5px;
+border-radius:5px; color:#727378; border:1px solid #5c5c5e; padding:1px 0px 1px; margin:0 auto;}
+.fb_fuwu{ border:solid 1px #dedede; margin:0 auto; width:90%; margin-top:10px; height:100px; font-size:0.7em;}
+.fb_city{ width:33%; float:left; text-align:center; height:30px; line-height:50px;}
+.fb_city_1{ width:33%; float:left; text-align:center; height:30px; line-height:70px;}
+.fb_add{ width:90%; margin:0 auto; border:solid 1px #dedede; margin-top:15px;}
+
+.am-list-news-default {
+  margin: 0px;
+}
+
+.am-list .am-list-item-dated a { text-indent:5px;
+}
+.am-list-news-default .am-list-date {
+  color: #fd9104; font-size:1em;
+}
+
+.am-list-date {
+  top: 1.1rem;
+}
+.fb_card_anniu{ margin:0 auto; width:100%;}
+
+.am-radio-inline,
+.am-checkbox-inline {
+  padding-left: 2em;
+  margin-bottom: 15px;
+  line-height:20px;
+}
+
+.am-form select[disabled],
+.am-form textarea[disabled],
+.am-form input[type="text"][disabled],
+.am-form input[type="password"][disabled],
+.am-form input[type="datetime"][disabled],
+.am-form input[type="datetime-local"][disabled],
+.am-form input[type="date"][disabled],
+.am-form input[type="month"][disabled],
+.am-form input[type="time"][disabled],
+.am-form input[type="week"][disabled],
+.am-form input[type="number"][disabled],
+.am-form input[type="email"][disabled],
+.am-form input[type="url"][disabled],
+.am-form input[type="search"][disabled],
+.am-form input[type="tel"][disabled],
+.am-form input[type="color"][disabled],
+.am-form-field[disabled],
+.am-form select[readonly],
+.am-form textarea[readonly],
+.am-form input[type="text"][readonly],
+.am-form input[type="password"][readonly],
+.am-form input[type="datetime"][readonly],
+.am-form input[type="datetime-local"][readonly],
+.am-form input[type="date"][readonly],
+.am-form input[type="month"][readonly],
+.am-form input[type="time"][readonly],
+.am-form input[type="week"][readonly],
+.am-form input[type="number"][readonly],
+.am-form input[type="email"][readonly],
+.am-form input[type="url"][readonly],
+.am-form input[type="search"][readonly],
+.am-form input[type="tel"][readonly],
+.am-form input[type="color"][readonly],
+.am-form-field[readonly],
+fieldset[disabled] .am-form select,
+fieldset[disabled] .am-form textarea,
+fieldset[disabled] .am-form input[type="text"],
+fieldset[disabled] .am-form input[type="password"],
+fieldset[disabled] .am-form input[type="datetime"],
+fieldset[disabled] .am-form input[type="datetime-local"],
+fieldset[disabled] .am-form input[type="date"],
+fieldset[disabled] .am-form input[type="month"],
+fieldset[disabled] .am-form input[type="time"],
+fieldset[disabled] .am-form input[type="week"],
+fieldset[disabled] .am-form input[type="number"],
+fieldset[disabled] .am-form input[type="email"],
+fieldset[disabled] .am-form input[type="url"],
+fieldset[disabled] .am-form input[type="search"],
+fieldset[disabled] .am-form input[type="tel"],
+fieldset[disabled] .am-form input[type="color"],
+fieldset[disabled] .am-form-field {
+  cursor: not-allowed;
+  background-color: #fff;
+}

@@ -1,0 +1,2 @@
+ALTER TABLE `weixin_customer`
+	ADD COLUMN `school` VARCHAR(100) NULL DEFAULT NULL COMMENT '学校' AFTER `email`;

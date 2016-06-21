@@ -1,0 +1,1 @@
+ALTER TABLE `weixin_autoresponse` ADD INDEX `keyword_index` (`keyword`) USING BTREE ;

@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+  body {
+	margin:0;
+	max-width:640px;
+	font-family:"黑体";
+	background-color:#68c7fc;
+	font-size:14px;
+	line-height: 1;
+}
+img {
+	box-sizing: border-box;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	border: 0px none;
+}
+*, :before, :after {
+   -webkit-box-sizing: border-box; 
+  box-sizing: inherit;
+}
+.oil_bg {
+	background:url(../images/new_oil_bg_xian.jpg) scroll repeat-y left top;
+	background-size:contain;
+}
+.oil_superiority_1 {
+	width:90%;
+	margin:0 auto;
+	height:90px;
+	padding-top:1px;
+	border-bottom:1px dotted #a6e2f8;
+}
+.oil_superiority_img {
+	float:left;
+	width:15%;
+	padding-top:10px;
+	padding-right:10px;
+}
+.oil_superiority_text {
+	float:left;
+	width:80%;
+	padding-top:10px;
+}
+.oil_superiority_2 {
+	width:90%;
+	margin:0 auto;
+	height:60px;
+	padding-top:20px;
+}
+.oil_superiority_2 .oil_superiority_img {
+	float:left;
+	width:15%;
+	padding-top:10px;
+	padding-right:10px;
+}
+.oil_superiority_2 .oil_superiority_text {
+	float:left;
+	width:80%;
+	padding-top:15px;
+}
+.oil_superiority_text .title {
+	color:#0e5470;
+	font-size:15px;
+}
+.oil_superiority_text .center {
+	color:#74909c; font-size: 12px;
+}
+.oil_superiority_3 {
+	width:80%;
+	margin:0 auto;
+	height:40px;
+	background:#53c2e2;
+	border-radius: 5px;
+	color:#FFF;
+	text-align:center;
+	font-size:18px;
+	padding-top:15px;
+	margin-bottom:25px;
+	margin-top:30px;
+}
+.oil_details{ padding-top:10px; padding-bottom:10px; margin: auto; width:96%; text-align:center;}
+.oil_one_button{ text-align:center; padding-top:2px; width:50%; margin:0 auto; padding-bottom:25px;}

@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+    html,
+    body,
+    .page {
+      height: 100%;
+    }
+    #wrapper {
+      position:relative;
+
+      bottom: 0;
+  
+      margin: 0;
+      width: 100%;
+      background-color: #fff;
+    }
+
+    .am-list {
+      margin: 0;
+    }
+
+    .am-list > li {
+      background: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8); padding:10px 0px 10px 0px;
+    }
+
+    .pull-action {
+      text-align: center;
+      height: 45px;
+      line-height: 45px;
+      color: #999;
+    }
+
+    .pull-action .am-icon-spin {
+      display: none;
+    }
+
+    .pull-action.loading .am-icon-spin {
+      display: block;
+    }
+
+    .pull-action.loading .pull-label {
+      display: none;
+    }
+	.am-btn-primary {
+  color: #222;
+  background-color: #fff;
+  border-color: #fff;
+}
+.am-btn {
+  font-size: 1.4rem;
+  padding: 0.1em 0.1em;
+     }
+	 .am-topbar {
+  min-height: 50px;}
+.am-header .am-header-title {
+  margin:0 15%
+  ;}
+  .am-slider-a4 {
+  margin-bottom: 25px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2)
+ /* Control Nav */;
+}
+.am-slider-a4 .am-control-nav li a {
+  width: 5px;
+  height: 5px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-indent: -9999px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+img {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0
+ /* 4 */;
+}
+  .futai_tel{ color:#2e5678; font-size:12px; text-align:left; width:100%; border-left:5px solid #2cb9fe; text-indent:10px; height:25px; padding-top:3px;}
+  .futai_tel_center{ border-top:1px solid #e8e8e8; width:100%; height:45px;  color:#2e5678; font-size:13px;}
+  .futai_tel_center .left{ width:50%; float:left; text-align:center; border-right:1px solid #e8e8e8; margin-top:14px; height:25px;}
+  .futai_tel_center .right{ width:50%; float:left; text-align:center; margin-top:14px;}
+  .futai_index_xian{ height:9px; border-bottom:1px solid #e8e8e8; border-top:1px solid #e8e8e8; background-color:#f0f0f0;}
+  .futai_index_pro{ height:auto;  background:#FFF; padding-top:10px; padding-left:20px; padding-bottom:10px;}
+  .futai_index_pro img{ width:68%; text-align:left;}
+  .futai_index_pro_1{ height:auto;  background:#FFF; padding-top:10px; padding-bottom:10px; padding-left:20px; border-top:1px solid #e8e8e8;}
+  .futai_index_pro_1 img{ width:68%; text-align:left;}
+  .futai_index_bottom{ float:left; width:100%; padding-top:10px;}
+  .futai_index_bottom_left{ float:left; width:50%; text-align:center;}
+   .futai_index_bottom_left img{ width:100%;}
+  .futai_index_bottom_right{ float:left; width:50%; text-align:center;}
+  .futai_index_bottom_right img{ width:100%;}
+  .futai_index_bottom_xian{ float:left; width:100%; padding-top:10px; height:5px;}

@@ -1,0 +1,5 @@
+ALTER TABLE `weixin_gasolinegift`
+	ADD COLUMN `mobile` VARCHAR(15) NULL DEFAULT NULL COMMENT '手机号' AFTER `giftid`,
+	ADD COLUMN `licenseno` VARCHAR(20) NULL DEFAULT NULL COMMENT '车牌号' AFTER `mobile`,
+	ADD COLUMN `address` VARCHAR(200) NULL DEFAULT NULL COMMENT '客户详细地址' AFTER `licenseno`,
+	ADD COLUMN `getstatus` INT(5) NULL DEFAULT NULL COMMENT '0上门领取,1寄送' AFTER `address`;

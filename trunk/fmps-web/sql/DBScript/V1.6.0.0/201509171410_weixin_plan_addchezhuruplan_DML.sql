@@ -1,0 +1,1 @@
+INSERT INTO `weixin_plan` (`id`, `serialno`, `planname`, `productid`, `codeproductcode`, `period`, `periodtype`, `premium`, `createtime`, `state`) VALUES ('ff8080814fd59b44014fd963d7ee0035', 1, '车主守护', 'ff8080814fd59b44014fd94100e40031', '2720000100000000', 1, '年', 100, '2015-09-17 11:40:43', '有效');

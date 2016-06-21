@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd"
+	default-autowire="byName" default-lazy-init="false">
+
+
+	<!-- 定时任务配置 scheduler 方式 注解 暂时不支持动态更新 -->
+	<context:component-scan base-package="org.jeecgframework.core.timer" />
+	<task:executor id="executor" pool-size="5" />
+	<task:scheduler id="scheduler" pool-size="10" />
+	<task:annotation-driven executor="executor"
+		scheduler="scheduler" />
+	<!-- 定时任务配置 quartz 可配置到管理界面 -->
+	<bean id="taskDemoServiceTaskJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="taskDemoService" />
+		<property name="targetMethod" value="work" />
+		<property name="concurrent" value="false" />
+	</bean>
+
+	<bean id="taskDemoServiceTaskCronTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="taskDemoServiceTaskJob" />
+		<property name="cronExpression" value="0/5 * * * * ?" />
+	</bean>
+	
+	<bean id="customerMessageSendingJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="customerMessageService" />
+		<property name="targetMethod" value="scheduleSendCustomerMessage" />
+		<property name="concurrent" value="true" />
+	</bean>
+	<bean id="customerMessageSendingTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="customerMessageSendingJob" />
+		<property name="cronExpression" value="0 0/1 * * * ?" />
+	</bean>
+		
+	<!-- 定时发送webServiceRedo  -->	
+	<bean id="webServiceRedoJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="redoTaskService" />
+		<property name="targetMethod" value="redoService" />
+		<property name="concurrent" value="true" />
+	</bean>
+	<bean id="webServiceRedoTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="webServiceRedoJob" />
+		<property name="cronExpression" value="0 0/40 * * * ?" />
+	</bean>
+	
+	
+		<!-- 定时任务下载多媒体文件  -->	
+	<bean id="multimediaDownloadJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="multimediaDownload" />
+		<property name="targetMethod" value="downloadService" />
+		<property name="concurrent" value="false" />				
+	</bean>
+	<bean id="multimediaDownloadTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="multimediaDownloadJob" />
+		<property name="cronExpression" value="0 0/1 * * * ?" />	
+	</bean>
+	
+	<!-- 定时任务自动确认核赔金额  -->	
+	<bean id="confirmUnderwritingJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="confirmUnderwritingTask" />
+		<property name="targetMethod" value="autoSendMessage" />
+		<property name="concurrent" value="true" />				
+	</bean>
+	<bean id="confirmUnderwritingJobTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="confirmUnderwritingJob" />
+		<property name="cronExpression" value="0 0/1 * * * ?" />	
+	</bean>
+			
+	
+	<!-- 定时任务发送模板消息  -->	
+	<bean id="templateMessageSendJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="templateMessageSendTask" />
+		<property name="targetMethod" value="sendTemplateMessage" />
+		<property name="concurrent" value="false" />				
+	</bean>
+	<bean id="templateMessageSendJobTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="templateMessageSendJob" />
+		<property name="cronExpression" value="0 0/5 * * * ?" />	
+	</bean>
+			
+	<!-- 定时任务发送"新车上牌提醒消息"模板消息 -->
+	<bean id="templateMessageSendNewCar" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="customerNotifyMessageTask" />
+		<property name="targetMethod" value="sendNewCarUpdateLicenceMessage" />
+		<property name="concurrent" value="false" />				
+	</bean>
+	<bean id="templateMessageSendNewCarTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="templateMessageSendNewCar" />
+		<property name="cronExpression" value="0 0 10 * * ?" />
+	</bean>
+	
+	<!-- 定时任务发送"生日提醒"模板消息 -->
+	<bean id="templateMessageSendBirthday" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="customerNotifyMessageTask" />
+		<property name="targetMethod" value="sendBirthdayBlessMessage" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="templateMessageSendBirthdayMessageTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="templateMessageSendBirthday" />
+		<property name="cronExpression" value="0 0 10 * * ?" />
+	</bean>
+	
+	<!-- 定时任务发送红包 -->
+	<bean id="cashcouponSend" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="cashCouponSendTask" />
+		<property name="targetMethod" value="send" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="cashcouponSendTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="cashcouponSend" />
+		<property name="cronExpression" value="0 0 3 * * ?" />
+	</bean>
+	
+	<!-- 定时任务发送阅读条款短信 -->
+	<bean id="readClauseSend" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="teleSaleNotifyMessageTask" />
+		<property name="targetMethod" value="sendReadClauseNotifyMessage" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="readClauseSendTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="readClauseSend" />
+		<property name="cronExpression" value="0 0 12 * * ?" />
+	</bean>	
+	
+	<!-- 定时任务,春节活动,批次发送核心承保 -->
+	<bean id="lunarNewYearCoreUnderwrite" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="lunarNewYearCoreUnderwriteTask" />
+		<property name="targetMethod" value="sendLunarNewYearCoreUnderwrite" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="lunarNewYearCoreUnderwriteTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="lunarNewYearCoreUnderwrite" />
+		<!-- 2016年1月31号凌晨1点跑批调用 -->
+		<property name="cronExpression" value="0 0 1,8,11 31 1 ? 2016" />
+	</bean>
+	
+	<!-- 定时任务调度器 -->
+	<bean id="schedulerFactory" lazy-init="false" autowire="no"
+		class="org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="taskDemoServiceTaskCronTrigger" />
+				<ref bean="customerMessageSendingTrigger" />
+				<ref bean="webServiceRedoTrigger" />
+				<ref bean="multimediaDownloadTrigger" />
+				<ref bean="confirmUnderwritingJobTrigger" />
+				<ref bean="templateMessageSendJobTrigger" />
+				<!-- 新增"新车上牌提醒消息"调度器 -->
+				<ref bean="templateMessageSendNewCarTrigger" />
+				<!-- 新增"生日提醒"调度器 -->
+				<ref bean="templateMessageSendBirthdayMessageTrigger" />
+				<ref bean="cashcouponSendTrigger" />
+				<ref bean="readClauseSendTrigger" />
+				<!-- 春节活动，定时发送核心承保 
+				<ref bean="lunarNewYearCoreUnderwriteTrigger" />
+				-->
+			</list>
+		</property>
+	</bean>
+
+</beans>

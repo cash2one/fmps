@@ -1,0 +1,1 @@
+ALTER TABLE `weixin_transaction_record` ADD INDEX transaction ( `transaction_id` ) ;

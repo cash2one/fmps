@@ -1,0 +1,16 @@
+CREATE TABLE `weixin_email_userinfo_temp` (
+	`id` VARCHAR(50) NOT NULL,
+	`name` VARCHAR(100) NULL DEFAULT NULL COMMENT '姓名',
+	`identifynumber` VARCHAR(20) NULL DEFAULT NULL COMMENT '身份证号',
+	`sex` VARCHAR(10) NULL DEFAULT NULL COMMENT '性别',
+	`email` VARCHAR(100) NULL DEFAULT NULL COMMENT '邮箱',
+	`importBatchId` VARCHAR(50) NULL DEFAULT NULL COMMENT '导入批次号',
+	`importTime` DATETIME NULL DEFAULT NULL COMMENT '操作时间',
+	`importOperator` VARCHAR(100) NULL DEFAULT NULL COMMENT '操作人',
+	`importResult` VARCHAR(100) NULL DEFAULT NULL COMMENT '导入情况',
+	`huodongid` VARCHAR(32) NULL DEFAULT NULL COMMENT '活动id',
+	PRIMARY KEY (`id`)
+)
+COMMENT='邮箱用户信息临时表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;

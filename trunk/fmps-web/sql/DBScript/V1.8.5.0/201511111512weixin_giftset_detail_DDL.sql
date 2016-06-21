@@ -1,0 +1,1 @@
+update weixin_giftset_detail set etl_status=null   ;

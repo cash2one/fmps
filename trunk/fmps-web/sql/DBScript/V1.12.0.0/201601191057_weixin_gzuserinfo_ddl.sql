@@ -1,0 +1,3 @@
+ALTER TABLE `weixin_gzuserinfo`
+	DROP INDEX `IDX_OPEN_ID`,
+	ADD UNIQUE INDEX `IDX_GZUSERINFO__OPENID` (`openid`);

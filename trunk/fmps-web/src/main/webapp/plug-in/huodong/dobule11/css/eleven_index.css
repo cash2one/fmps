@@ -1,0 +1,535 @@
+@charset "utf-8";
+/* CSS Document */
+.box_1 {
+	border: 1px solid #093;
+	width: 20px;
+	height: 20px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	-o-border-radius: 50px;
+	border-radius: 50px;
+	text-align: left;
+}
+
+.box_2 {
+	border: 1px solid #222;
+	width: 20px;
+	height: 20px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	-o-border-radius: 50px;
+	border-radius: 50px;
+	text-align: left;
+}
+
+.am-header-default {
+	background-color: #f00b3a;
+}
+
+.am-titlebar {
+	margin-top: 5px;
+}
+
+.am-btn-primary {
+	color: #fff;
+	background-color: #f00b3a;
+	border-color: #f00b3a;
+}
+.am-btn-default {
+	color: #fff;
+	background-color: #fe1241;
+	border-color: #fe1241;
+}
+
+.am-btn-primary:hover, .am-btn-primary:focus, .am-btn-primary:active,
+	.am-btn-primary.am-active, .am-active .am-btn-primary.am-dropdown-toggle
+	{
+	color: #fff;
+	background-color: #f00b3a;
+	border-color: #f00b3a;
+}
+.am-btn-default:hover, .am-btn-default:focus, .am-btn-default:active,
+	.am-btn-default.am-active, .am-active .am-btn-default.am-dropdown-toggle
+	{
+	color: #fff;
+	background-color: #fe1241;
+	border-color: #fe1241;
+}
+
+.am-btn {
+	padding: .225em 1em;
+}
+
+.am-header {
+	position: relative;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 10px;
+	border-bottom: 1px solid #a00528;
+}
+
+.am-header-default .am-header-nav .am-btn {
+	margin-top: 1px;
+}
+
+select {
+	border: 0px solid #fff;
+}
+
+body {
+	background-color: #f00b3a;
+}
+
+.eleven_index_center {
+	padding: 0 10px;
+	height: auto;
+	background: #f00b3a;
+}
+
+.eleven_index_center_top_img {
+	text-align: center;
+	width: 75%;
+	margin: 0 auto;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.eleven_index_center_top_img_2 {
+	float: left;
+	width: 100%;
+}
+
+.eleven_index_center_top_img_2 .img_a_1 {
+	float: left;
+	width: 30%;
+	text-align: center;
+}
+
+.eleven_index_center_top_img_2 .img_a_2 {
+	float: left;
+	width: 5%;
+	text-align: center;
+}
+
+.eleven_index_center_top_img_3 {
+	float: left;
+	width: 100%;
+	padding-top: 15px;
+}
+
+.eleven_index_center_top_img_3 .pro_1 {
+	float: left;
+	width: 30%;
+	text-align: center;
+}
+
+.eleven_index_center_top_img_3 .pro_2 {
+	float: left;
+	width: 5%;
+	text-align: center;
+}
+
+.banner_2 {
+	padding-top: 15px;
+	clear: both;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.eleven_index_urban {
+	height: 45px;
+	background-color: #fe1241;
+	box-shadow: 0px 0px 0px, /*左边阴影*/   0px 0px 0px yellow, /*右边阴影*/   0px
+		0px 0px blue, /*顶部阴影*/   0px 3px 2px #e0cac1; /*底边阴影*/
+	padding-bottom: 15px;
+	color: #9154cd;
+	text-align: left;
+	padding-top: 5px;
+	padding-left: 10px;
+	color: #fff;
+	color: #949494;
+	border-bottom: 1px solid #a00528;
+	border-top: 1px solid #a00528;
+}
+
+.eleven_coupon_center {
+	background: #fd2752;
+	height: auto;
+	padding: 0 15px;
+	position: relative;
+	width: 100%;
+}
+
+.eleven_coupon_1 {
+	background: url(../images/eleven_coupon_imgbg2.png) scroll no-repeat
+		center top;
+	height: 150px;
+	background-size: contain;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+/*320*/
+@media screen and (min-width:320px) {
+	.eleven_coupon_1 {
+		height: 120px;
+	}
+}
+
+.eleven_coupon_left {
+	float: left;
+	width: 79%;
+	position: relative;
+	text-align: left;
+	padding-left: 10%;
+	font-size: 12px;
+}
+
+@media screen and (min-width:320px) {
+	.eleven_coupon_left {
+		padding-left: 2%;
+		font-size: 18px;
+		padding-top: 12%;
+		color: #ff6192;
+	}
+}
+
+.eleven_coupon_right {
+	float: left;
+	width: 20%;
+	position: relative;
+	text-align: center;
+	padding-top: 10%;
+	font-size: 15px;
+	color: #7f7e7e;
+}
+
+@media screen and (min-width:320px) {
+	.eleven_coupon_right {
+		padding-top: 12%;
+		font-size: 15px;
+		color: #7f7e7e;
+	}
+}
+
+.eleven_coupon_bottom {
+	clear: both;
+	font-size: 14px;
+	position: relative;
+	text-align: left;
+	padding-left: 4%;
+	color: #fff;
+	padding-top: 30px;
+}
+
+@media screen and (min-width:320px) {
+	.eleven_coupon_bottom {
+		padding-left: 4%;
+		color: #fff;
+		padding-top: 30px;
+		width:220px;
+	    white-space:nowrap;
+	    text-overflow:ellipsis;
+	    -o-text-overflow:ellipsis;
+	    overflow: hidden;
+	}
+}
+/*360*/
+@media screen and (min-width:360px) {
+	.eleven_coupon_1 {
+		height: 130px;
+	}
+}
+
+@media screen and (min-width:360px) {
+	.eleven_coupon_left {
+		font-size: 20px;
+		padding-top: 10%;
+		color: #ff6192;
+	}
+}
+
+@media screen and (min-width:360px) {
+	.eleven_coupon_right {
+		font-size: 15px;
+		color: #7f7e7e;
+	}
+}
+
+@media screen and (min-width:360px) {
+	.eleven_coupon_bottom {
+		padding-top: 40px;
+		width:250px;
+	    white-space:nowrap;
+	    text-overflow:ellipsis;
+	    -o-text-overflow:ellipsis;
+	    overflow: hidden;
+	}
+}
+
+/*375*/
+@media screen and (min-width:375px) {
+	.eleven_coupon_1 {
+		height: 140px;
+	}
+}
+
+@media screen and (min-width:375px) {
+	.eleven_coupon_left {
+		font-size: 21px;
+		padding-top: 10%;
+		color: #ff6192;
+	}
+}
+
+@media screen and (min-width:375px) {
+	.eleven_coupon_bottom {
+		padding-top: 44px;
+		width:260px;
+	    white-space:nowrap;
+	    text-overflow:ellipsis;
+	    -o-text-overflow:ellipsis;
+	    overflow: hidden;
+	}
+}
+/*410*/
+@media screen and (min-width:400px) {
+	.eleven_coupon_1 {
+		height: 150px;
+	}
+}
+
+@media screen and (min-width:400px) {
+	.eleven_coupon_left {
+		font-size: 23px;
+		padding-top: 10%;
+		color: #ff6192;
+		width: 78%;
+	}
+}
+
+@media screen and (min-width:400px) {
+	.eleven_coupon_bottom {
+		padding-top: 50px;
+	}
+}
+/*640*/
+@media screen and (min-width:640px) {
+	.eleven_coupon_left {
+		font-size: 23px;
+		padding-top: 7%;
+		color: #ff6192;
+		width: 70%;
+		text-align: center;
+		padding-left: 15%;
+	}
+}
+
+@media screen and (min-width:640px) {
+	.eleven_coupon_right {
+		padding-top: 9%;
+		font-size: 15px;
+		color: #7f7e7e;
+		width: 20%;
+		text-align: left;
+		padding-left: 1%;
+	}
+}
+
+@media screen and (min-width:640px) {
+	.eleven_coupon_bottom {
+		padding-top: 44px;
+		width: 44%;
+		text-align: right;
+	}
+}
+/*1024*/
+@media screen and (min-width:1024px) {
+	.eleven_coupon_left {
+		font-size: 23px;
+		padding-top: 4%;
+		color: #ff6192;
+		width: 60%;
+		text-align: center;
+		padding-left: 32%;
+	}
+}
+
+@media screen and (min-width:1024px) {
+	.eleven_coupon_right {
+		padding-top: 6%;
+		font-size: 15px;
+		color: #7f7e7e;
+		width: 40%;
+		text-align: left;
+		padding-left: 3%;
+	}
+}
+
+@media screen and (min-width:1024px) {
+	.eleven_coupon_bottom {
+		padding-top: 40px;
+		width: 50%;
+		text-align: left;
+		padding-left: 32%;
+	}
+}
+
+.am-modal-no-btn .am-modal-dialog {
+	border-radius: 5px;
+	border-bottom: none;
+	border-top: 5px solid #f4ca1e;
+}
+
+.am-modal-dialog {
+	border-radius: 0;
+	background: #e10d39;
+}
+
+.am-modal-hd {
+	color: #fff;
+	font-family: "微软雅黑";
+	font-size: 18px;
+}
+
+.eleven_time {
+	color: #fff;
+	font-family: "微软雅黑";
+	font-size: 30px;
+}
+
+.eleven_time_text {
+	float: left;
+	width: 100%;
+	color: #fff;
+	font-size: 14px;
+}
+
+.eleven_time_text .text_1 {
+	float: left;
+	width: 33%;
+}
+
+.eleven_time_text .text_2 {
+	float: left;
+	width: 12%;
+}
+
+.eleven_time_text .text_3 {
+	float: left;
+	width: 31%;
+}
+
+.eleven_time_text .text_4 {
+	float: left;
+	width: 15%;
+}
+
+.pop_eleven_bg {
+	text-align: center;
+	padding-top: 70px;
+	padding-bottom: 20px;
+}
+[data-am-widget='tabs']
+   { margin: 0px 0px -5px 0px; 
+   }
+   [data-am-widget='tabs'] .fb-am-tabs-nav {
+     width: 100%;
+     padding: 0;
+     margin: 0;
+     list-style: none;
+     text-align: center;
+     display: -webkit-box;
+     display: -webkit-flex;
+     display: -ms-flexbox;
+     display: flex;
+     opacity:0.9;
+     border-top:1px solid #e8e8e8;
+   }
+   [data-am-widget='tabs'] .fb-am-tabs-nav li {
+     -webkit-box-flex: 1;
+     -webkit-flex: 1;
+         -ms-flex: 1;
+             flex: 1;
+   }
+   [data-am-widget='tabs'] .fb-am-tabs-nav a {
+     display: block;
+     word-wrap: normal;
+     /* for IE */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .am-navbar {
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 49px;
+  line-height: 49px;
+  z-index: 1010;
+   border: 1px solid #ddd;
+  }
+  .am-tabs-bd {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  margin-bottom: 45px;
+  border-top: none;
+  z-index: 100;
+  -webkit-transition: height .3s;
+          transition: height .3s;
+    }
+  .am-tabs-bd .am-tab-panel {
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    float: left;
+    width: 100%;
+    padding: 0px ;
+    visibility: hidden;
+    -webkit-transition: -webkit-transform 0.3s;
+            transition: transform 0.3s;
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+   }
+   .am-tabs-default .fb-am-tabs-nav {
+     line-height: 48px;
+     background-color: #ffffff;
+    }
+    .am-tabs-default .fb-am-tabs-nav a {
+      color: #999999;
+      line-height: 42px;
+    }
+    .am-tabs-default .fb-am-tabs-nav > .am-active a {
+      background-color: #ffffff;
+      color: #fd2752;
+
+    }
+    .fb-am-tabs-nav a [class*="am-icon"] {
+      width: 24px;
+      height: 24px;
+      margin: 2px auto 0;
+      display: block;
+      line-height: 24px;
+    }
+    .fb-am-tabs-nav a [class*="am-icon"]:before {
+      font-size: 22px;
+      vertical-align: middle;
+    }
+    .fb-am-tabs-nav a .am-tabs-label {
+      padding-top: 0px;
+      line-height: 20px;
+      font-size: 12px;
+      display: block;
+      word-wrap: normal;
+      /* for IE */
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .getMoreCoupon{ font-size:16px; color:#fff; text-align:center; padding:10px 0px 10px 0px; clear:both; background:#fd2752;}
+    .viewCoupon{  color:#999;}

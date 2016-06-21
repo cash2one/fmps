@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background-color:#fff; font-family:"黑体"; font-size:12px;}
+   img {
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0px none;
+       }
+.am-header-default {
+  height:45px; background:#4fc6ee; color:#fff; border-bottom:1px solid #c0c0c0;
+}
+.am-header-default .am-header-nav {
+  color: #fff;
+}
+.am-header-default .am-header-nav > a {
+  color: #fff;
+}
+.am-header-default .am-header-title {
+  color: #ccc;
+}
+.am-header {
+  line-height: 45px; z-index:1045;
+}
+.am-header .am-header-title {
+  margin: 0 15%;
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  display: block;
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height:40px;
+}
+.am-header .am-header-title img {
+  margin-top: 5px;
+  height: 18px;
+  vertical-align: top;
+}
+.am-slider-a1 {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0)
+ /* Control Nav; */
+}
+input{ border:0px; width:100%; font-size:14px; height:25px; padding-top:3px; color:#000;}
+.search{ height:30px; border-radius:5px; border:1px solid #e8e8e8; background-color:#fff; margin-top:7px;}
+.search .search_img{ float:left; width:15%;}
+.search .search_input{ float:left; width:80%; border:0px solid #fff;}
+.Double_activity_xian{ background-color:#f5f5f5; border-bottom:1px solid #e8e8e8;  height:10px; clear:both;}
+.Double_activity_xian_bottom{ background-color:#f5f5f5; border-bottom:1px solid #e8e8e8;  height:20px; clear:both;}
+.recommend_business{ float:left; width:100%; padding:0 10px; border-bottom:1px solid #e8e8e8; margin-top:10px; padding-bottom:10px;}
+.business_img{ float:left; width:25%;}
+.business_img img{ width:70px; height:65px;}/*变形*/
+.recommend_business .time{padding-top:17px; padding-left:1px;}
+@media screen and (min-width:360px){ .recommend_business .time{ padding-top:19px;}}
+@media screen and (min-width:384px){ .recommend_business .time{ padding-top:20px;}}
+@media screen and (min-width:414px){ .recommend_business .time{ padding-top:21px;}}
+.recommend_business .time .time_text{padding:3px; background:#ff8e3f; color:#fff; border-radius:3px;}
+.business_text{ float:left; width:72%; margin-left:1%;}
+@media screen and (min-width:360px){ .business_text{ float:left; width:75%; margin-left:-1%;}}
+@media screen and (min-width:375px){ .business_text{ float:left; width:77%; margin-left:-2%;}}
+@media screen and (min-width:384px){ .business_text{ float:left; width:77%; margin-left:-3%;}}
+@media screen and (min-width:414px){ .business_text{ float:left; width:78%; margin-left:-4%;}}
+.business_text .name{ font-size:16px; color:#333; float:left; width:80%; }
+.business_text .km{ float:left; width:20%; text-align:right; padding-top:3px;}
+.business_text .add{ color:#666; font-size:12px; clear:both; padding-top:10px; border-bottom:1px solid #e8e8e8; padding-bottom:5px;}
+.business_text .ticket_name{ font-size:12px; color:#666; float:left; width:65%; margin-top:5px;}
+.business_text .receive{ float:left; width:35%; margin-top:10px; font-size:10px;}/*变形*/
+.business_text .receive .border{  border:1px dotted #ff4a90; border-radius: 5px; text-align:center; height:20px; color:#ff4a90;}
+.business_text .ticket_name_1{ font-size:12px; color:#666; float:left; width:65%; margin-top:5px;}
+.business_text .receive_1{ float:left; width:35%; margin-top:10px; font-size:10px;}
+.business_text .receive_1 .border{  border:1px solid #85ce4e; border-radius: 5px; text-align:center; height:20px; color:#85ce4e;}
+.business_text .receive_2{ float:left; width:10%; margin-top:5px; font-size:12px;}
+.business_text .receive_2 .border_1{  border-radius:3px; text-align:center; width:20px; height:20px; color:#fff; background-color:#fa952f; margin-left:5px;}
+.project_1{ padding-top:15px; padding-bottom:12px; height:30px; width:100%;}
+.project_1 .border_1{ border-radius:3px; text-align:center; width:25px; height:25px; color:#fff; background-color:#38c2aa; padding:3px;}
+.project_1 .border_2{ border-radius:3px; text-align:center; width:25px; height:25px; color:#cc0000; background-color:#fff; padding:3px; border:1px dotted #cc0000;}
+.project_1 .border_3{ border-radius:3px; text-align:center; width:25px; height:25px; color:#fff; background-color:#1987dc; padding:3px;}
+
+.Double_banner{ float:left; width:100%; border-bottom:1px solid #e8e8e8;}
+.Double_banner_left{ float:left; width:50%; border-right:1px solid #e8e8e8;}
+.Double_banner_right{ float:left; width:50%;}
+.Double_activity_nbsp{ height:40px; clear:both;}
+ dt + dd { margin-top: 0em;}
+ dt { font-weight:300;}

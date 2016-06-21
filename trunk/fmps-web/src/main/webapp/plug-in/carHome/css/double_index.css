@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background-color:#fff; font-family:"黑体";}
+   img {
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0px none;
+       }
+.am-header-default {
+  height:45px; background:url("${webRoot}/plug-in/carHome/images/search_icon_bg.jpg") repeat-x left top; color:#fff;
+}
+.am-header-default .am-header-nav {
+  color: #fff;
+}
+.am-header-default .am-header-nav > a {
+  color: #fff;
+}
+a{ color: #222;}
+.am-header-default .am-header-title {
+  color: #ccc;
+}
+.am-header {
+  line-height: 45px;
+}
+.am-header .am-header-title {
+  margin: 0 15%;
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  display: block;
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height:40px;
+}
+.am-header .am-header-title img {
+  margin-top: 5px;
+  height: 18px;
+  vertical-align: top;
+}
+.am-slider-a1 {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0)
+ /* Control Nav; */
+}
+.am-header .am-header-left {
+  left: 10px;
+}
+.am-header .am-header-right {
+  right: 10px;
+}
+input{ border:0px; width:100%; font-size:14px; height:25px; padding-top:3px; color:#000;}
+.search{ height:30px; border-radius:5px; border:1px solid #e8e8e8; background-color:#fff; margin-top:7px;}
+.search .search_img{ float:left; width:15%;}
+.search .search_input{ float:left; width:80%; border:0px solid #fff;}
+.Double_activity{ height:100%; background-color:#fff; width:100%; padding-bottom:8px;}
+.Double_activity_list_1{ float:left; width:100%; padding-top:15px; background-color:#fff;}
+.Double_activity_list_1 .li_1{ float:left; width:25%; text-align:center; font-size:12px; color:#222;}
+.Double_activity_list_1 .li_1 .text{ line-height:24px;} 
+.Double_activity_list_1 .li_1 img{ width:57%;}
+.Double_activity_list_2{ float:left; width:100%; padding-top:10px; background-color:#fff; padding-bottom:12px;}
+.Double_activity_list_2 .li_2{ float:left; width:25%; text-align:center; font-size:12px; color:#222;}
+.Double_activity_list_2 .li_2 .text{ line-height:24px;} 
+.Double_activity_list_2 .li_2 img{ width:57%;}
+.sup{ position:absolute; background-color:#FF0000; color:#FFFFFF; border-radius:3px; height:18px; line-height:18px; width:30px; margin-left:-15px; font-size:11px;}
+.Double_activity_xian{ background-color:#f5f5f5; border-bottom:1px solid #e8e8e8; border-top:1px solid #e8e8e8; height:10px; clear:both;}
+.Double_activity_xian_bottom{ background-color:#f5f5f5; border-bottom:1px solid #e8e8e8; border-top:1px solid #e8e8e8; height:20px; clear:both;}
+.Double_activity_advertisement{ width:100%; background-color:#fff;}
+.Double_activity_advertisement .advertisement_1{ float:left; width:33%;  border-top:3px solid #fff; border-bottom:3px solid #fff; margin-left:2px;}
+.Double_activity_advertisement .advertisement_2{ float:left; width:33%;  border-top:3px solid #fff; border-bottom:3px solid #fff;}
+.Double_activity_advertisement .advertisement_3{ float:left; width:33%;  border-top:3px solid #fff; border-bottom:3px solid #fff;}
+.Double_activity_ad{ width:100%; float:left; height:auto;}
+.Double_activity_ad .ad_1{ width:50%; float:left;}
+.Double_activity_ad .ad_2{ width:50%; float:left;}
+.Double_activity_ad_1{ width:100%; float:left; border-top:1px solid #e8e8e8; height:auto;}
+.Double_activity_ad_1 .ad_1{ width:50%; float:left;}
+.Double_activity_ad_1 .ad_2{ width:50%; float:left;}
+.Double_activity_recommend{ font-size:12px;}
+.Double_activity_recommend .recommend_text{ text-align:left; color:#4ec6ee; text-indent:3px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #e8e8e8; text-indent:12px; background:#fff;}

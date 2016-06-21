@@ -1,0 +1,1 @@
+alter table weixin_receive_message add path  varchar(100);

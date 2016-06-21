@@ -1,0 +1,2 @@
+INSERT INTO `weixin_salechannel_config` (`id`, `salemode`, `operateCode`, `handler1code`, `channeltype`, `businessnature`) VALUES ('637a080d-9804-11e5-b9ab-c03fd535e886', '2', '0001465', '0001465', '04', '06');
+INSERT INTO `weixin_salechannel_config` (`id`, `salemode`, `operateCode`, `handler1code`, `channeltype`, `businessnature`) VALUES ('a9ce3873-9804-11e5-b9ab-c03fd535e886', '1', NULL, NULL, '04', '06');

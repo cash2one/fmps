@@ -1,0 +1,2 @@
+delete from  weixin_menuentity  where  id ='sdf3728f2370147er2werderty33';
+INSERT INTO `weixin_menuentity` (`ID`, `menukey`, `msgtype`, `name`, `orders`, `templateid`, `type`, `url`, `fatherid`, `accountid`) VALUES ('sdf3728f2370147er2werderty33', 'wlp', 'text', 'Œ¢–≈…¡≈‚', '23', '8a828ebb48eda2db0148edd47c790004', 'click', NULL, '402889ff4728f237014728f60erty321', '8a828ebb4883613201488364bc510001');

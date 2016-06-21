@@ -1,0 +1,18 @@
+﻿DELETE FROM `weixin_menuentity`   where fatherid is not null ;
+DELETE FROM `weixin_menuentity`   where fatherid is  null  ;
+/*!40000 ALTER TABLE `weixin_menuentity` DISABLE KEYS */;
+INSERT INTO `weixin_menuentity` (`ID`, `menukey`, `msgtype`, `name`, `orders`, `templateid`, `type`, `url`, `fatherid`, `accountid`) VALUES
+	('402889ff4728a293014728bc62250036', 'c03', 'text', '我', '3', 'f7a8a3a946e55a940146e5c317f6005f', 'click', NULL, NULL, '8a828ebb4883613201488364bc510001'),
+	('402889ff4728a293014728bcb3020038', 'grxx', 'text', '个人信息', '34', 'f7a8a3a946e55a940146e5c317f6005f', 'view', 'https://open.weixin.qq.com/connect/oauth2/authorize?appid={APPID}&redirect_uri={domain}/fo/binded/personalCenter.do?method=personindex&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect', '402889ff4728a293014728bc62250036', '8a828ebb4883613201488364bc510001'),
+	('402889ff4728f237014728f60erty321', 'c01', 'text', '理赔', '2', '8a828ebb48eda2db0148edd47c790004', 'view', 'https://open.weixin.qq.com/connect/oauth2/authorize?appid={APPID}&redirect_uri={domain}/fo/binded/customerClaims/customerClaimsController.do?method=getClaimsPolicyByCustomerId&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect', NULL, '8a828ebb4883613201488364bc510001'),
+	('402889ff4728f237014728f60sdf2345', 'c01', 'text', '服务', '1', 'f7a8a3a946e55a940146e5c317f6005f', 'click', NULL, NULL, '8a828ebb4883613201488364bc510001'),
+	('402889ff4728f23701472werderty321', 'badh', 'text', '报案电话', '22', '8a828ebb48eda2db0148edd47c790004', 'click', '', '402889ff4728f237014728f60erty321', '8a828ebb4883613201488364bc510001'),
+	('402889ff4728fwsx342d2werderty321', 'cxlpjd', 'text', '查询理赔进度', '21', '8a828ebb48eda2db0148edd47c790004', 'view', 'https://open.weixin.qq.com/connect/oauth2/authorize?appid={APPID}&redirect_uri={domain}/fo/binded/customerClaims/customerClaimsController.do?method=getClaimsPolicyByCustomerId&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect', '402889ff4728f237014728f60erty321', '8a828ebb4883613201488364bc510001'),
+	('402889ff47asd123014728f60sdf2345', 'xcsp', 'text', '新车车牌告知', '14', '8a828ebb48eda2db0148edd47c790004', 'view', 'https://open.weixin.qq.com/connect/oauth2/authorize?appid={APPID}&redirect_uri={domain}/fo/binded/customerNewCarLicenceController.do?method=getCustomerNewCarLicence&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect\r\n', '402889ff4728f237014728f60sdf2345', '8a828ebb4883613201488364bc510001'),
+	('402qwe12wsasd123014728f60sdf2345', 'wdcx', 'text', '网点查询', '13', '8a828ebb48eda2db0148edd47c790004', 'view', 'https://open.weixin.qq.com/connect/oauth2/authorize?appid={APPID}&redirect_uri={domain}/fo/serviceBranch.do?list&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect\r\n', '402889ff4728f237014728f60sdf2345', '8a828ebb4883613201488364bc510001'),
+	('402qwe12wsdsa2fsdf72fsdfddf2345', 'fbsq', 'text', '富邦社区', '32', '8a828ebb48eda2db0148edd47c790004', 'view', 'http://wsq.qq.com/reflow/262841943', '402889ff4728a293014728bc62250036', '8a828ebb4883613201488364bc510001'),
+	('405sdfwer234234235gdgdgdxew334', 'fsb', 'text', '封神榜', '31', '8a828ebb48eda2db0148edd47c790004', 'view', 'https://open.weixin.qq.com/connect/oauth2/authorize?appid={APPID}&redirect_uri={domain}/fo/binded/customerHonorTitleController.do?method=customerHonorTitle&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect', '402889ff4728a293014728bc62250036', '8a828ebb4883613201488364bc510001');
+/*!40000 ALTER TABLE `weixin_menuentity` ENABLE KEYS */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

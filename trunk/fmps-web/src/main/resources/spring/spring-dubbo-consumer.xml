@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:application name="cp-consumer" owner="fmps" organization="fubon" />
+	<!-- <dubbo:registry address="zookeeper://10.1.21.43:2181" /> -->
+	<!-- 扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类 -->
+	 <!-- <dubbo:annotation package="cn.com.fubon.fo.claim.controller" />   -->  
+     <dubbo:reference id="productService" interface="cn.com.fubon.emarketing.api.product.service.ProductService" protocol="dubbo" url="dubbo://10.2.14.70:20881" timeout="20000" /> 
+</beans>

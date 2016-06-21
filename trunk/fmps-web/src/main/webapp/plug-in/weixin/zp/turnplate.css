@@ -1,0 +1,164 @@
+@charset "utf-8";
+/* CSS Document */
+   body{ 	
+    margin:0;
+	max-width:640px;
+	font-family: "黑体" ; 
+	background-color:#8c0c0b; 
+	}
+   img {
+	box-sizing: border-box;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	border: 0px none;
+}
+.spring_top_bg{ background:url(../images/spring_there_topbg.jpg) center top no-repeat scroll; background-size:contain; height:140px;}
+@media screen and (min-width:360px){ .spring_top_bg{height:152px;}}
+@media screen and (min-width:375px){ .spring_top_bg{height:160px;}}
+@media screen and (min-width:384px){ .spring_top_bg{height:170px;}}
+@media screen and (min-width:414px){ .spring_top_bg{height:180px;}}
+@media screen and (min-width:640px){ .spring_top_bg{height:269px;}}
+.spring_top_bg img{ border:3px solid #500a09; width:50px; height:50px; border-radius:50px; margin-left:10px; float:left; margin-top:30px; }
+@media screen and (min-width:360px){ .spring_top_bg img{width:55px; height:55px;}}
+@media screen and (min-width:375px){ .spring_top_bg img{ margin-left:15px; margin-top:35px;}}
+@media screen and (min-width:384px){ .spring_top_bg img{width:60px; height:60px; margin-left:15px;}}
+@media screen and (min-width:414px){ .spring_top_bg img{width:65px; height:65px; margin-left:15px; margin-top:35px;}}
+@media screen and (min-width:640px){ .spring_top_bg img{width:90px; height:90px; margin-left:25px; margin-top:65px;}}
+.spring_top_bg .text{ float:left; width:65%; font-size:0.75rem; color:#500a09; padding:35px 0px 0px 25px; line-height:22px;}
+@media screen and (min-width:360px){ .spring_top_bg .text{padding:35px 0px 0px 25px}}
+@media screen and (min-width:375px){ .spring_top_bg .text{padding:40px 0px 0px 25px; font-size:0.825rem;}}
+@media screen and (min-width:414px){ .spring_top_bg .text{padding:45px 0px 0px 25px; font-size:1rem; width:67%;}}
+@media screen and (min-width:640px){ .spring_top_bg .text{padding:60px 0px 0px 50px; font-size:1.2rem; width:65%}}
+.spring_number{ background:url(../images/spring_032.jpg) center top no-repeat scroll; background-size:contain; height:280px;}
+@media screen and (min-width:360px){ .spring_number{height:315px;}}
+@media screen and (min-width:375px){ .spring_number{height:320px;}}
+@media screen and (min-width:384px){ .spring_number{height:330px;}}
+@media screen and (min-width:414px){ .spring_number{height:350px;}}
+@media screen and (min-width:640px){ .spring_number{height:535px;}}
+.spring_number_limit{ text-align:center; color:#FFF; font-size:40px; font-weight:500; padding-top:3.7rem; padding-bottom:5px;}
+@media screen and (min-width:360px){ .spring_number_limit{ padding-top:4.4rem; font-size:46px;}}
+@media screen and (min-width:375px){ .spring_number_limit{ padding-top:4.2rem; font-size:56px;}}
+@media screen and (min-width:384px){ .spring_number_limit{ padding-top:4.5rem; font-size:56px;}}
+@media screen and (min-width:414px){ .spring_number_limit{ padding-top:5rem; font-size:60px;}}
+@media screen and (min-width:640px){ .spring_number_limit{ padding-top:8.5rem; font-size:80px; padding-bottom:25px;}}
+.spring_number_text{ text-align:center; color:#feba37; font-size:1rem; background:#770e0b; width:100px; margin:0 auto; border:1px solid #feba37; height:25px; line-height:25px; border-radius: 5px;}
+.spring_number_button{ padding-top:2.9rem; text-align:center; color:transparent; font-size:1rem; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff5db), to(#f8ca7a)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight:bold;}
+@media screen and (min-width:360px){ .spring_number_button{ padding-top:3.3rem;}}
+@media screen and (min-width:375px){ .spring_number_button{ padding-top:3.3rem;}}
+@media screen and (min-width:384px){ .spring_number_button{ padding-top:3.3rem;}}
+@media screen and (min-width:414px){ .spring_number_button{ padding-top:3.6rem; font-size:1.2rem;}}
+@media screen and (min-width:640px){ .spring_number_button{ padding-top:5.3rem; font-size:2rem;}}
+.spring_share{ color:#f9bb3c; font-size:10px; text-align:center; padding-top:15px;}
+.reward-carousel {
+    width:90%;
+    margin: 0 auto;
+    border: 2px solid #D18516;
+    background-color: #791121;
+    border-radius: 1rem;
+}
+.reward-carousel-2 {
+    width:90%;
+    margin: 0 auto;
+    border: 2px solid #D18516;
+    background-color: #791121;
+    border-radius: 1rem;
+}
+.reward-title {
+    position: relative;
+    font-size: 0px;
+    margin: 0px auto;
+    width: 10rem;
+    top: -1.2rem;
+}
+.reward-title-2 {
+    position: relative;
+    font-size: 0px;
+    margin: 0px auto;
+    width: 13rem;
+    top: -1.2rem;
+}
+.reward-center{ font-size:14px; border-bottom:1px dotted #fff; width:90%; margin:0 auto; height:50px;}
+.reward-center .text_left{ float:left; width:90%;}
+.reward-center .text_right{ float:left; width:10%; padding-top:10px; text-align:right;}
+.text_left .text_1{ color:#fff; padding-bottom:5px; }
+.text_left .text_2{ font-size:12px; color:#c7c5c5; }
+.reward-center_2{ font-size:14px; width:90%; margin:0 auto; height:28px; padding-top:15px; padding-bottom:25px;}
+.reward-center_2 .text_left{ float:left; width:50%; color:#FFF; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.reward-center_2 .text_right{ float:left; width:50%; text-align:right; color:#FFF; padding-top:10px;}
+.reward-center_3{ font-size:14px; width:90%; margin:0 auto; height:28px; }
+.reward-center_3 .text_left{ float:left; width:40%; color:#FFF; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.reward-center_3 .text_right{ float:left; width:60%; text-align:right; color:#FFF;}
+.nbsp{ height:40px;}
+.index_nbsp{ height:10px;}
+.spring_nbsp_button{ height:50px;  width:82%; margin:0 auto; margin-top:1.6rem;}
+@media screen and (min-width:360px){ .spring_nbsp_button{ margin-top:1.6rem; height:60px;}}
+@media screen and (min-width:375px){ .spring_nbsp_button{ margin-top:1.6rem; height:63px;}}
+@media screen and (min-width:384px){ .spring_nbsp_button{ margin-top:1.6rem; height:65px;}}
+@media screen and (min-width:414px){ .spring_nbsp_button{ margin-top:2.2rem; height:65px;}}
+@media screen and (min-width:640px){ .spring_nbsp_button{ margin-top:4.5rem; height:100px;}}
+.spring_info_1{ width:76%; margin:0 auto; padding-top:35px;}
+.spring_info_1 .info_left{ float:left; width:28%; font-size:18px; color:#fff;}
+.spring_info_1 .info_right{ float:left; width:70%;}
+input{ border-bottom:1px solid #fff; border-left:0 solid #fff; border-right:0 solid #fff; border-top:0 solid #fff; background-color:#8c0c0b; color:#fff; width:100%;}
+.spring_info_2{ width:76%; margin:0 auto; padding-top:35px; clear:both;}
+.spring_info_2 .info_left{ float:left; width:28%; font-size:18px; color:#fff;}
+.spring_info_2 .info_right{ float:left; width:70%;}
+.spring_info_3{ width:76%; margin:0 auto; padding-top:35px; clear:both;}
+.spring_info_3 .info_left{ float:left; width:28%; font-size:18px; color:#fff;}
+.spring_info_3 .info_right{ float:left; width:35%;}
+.spring_info_3 .info_validate{ float:left; width:30%; height:20px; border:1px solid #fff; text-align:center; color:#fff; margin-left:4%; font-size:12px; line-height:20px;}
+.info_button{ text-align:center; padding-top:55px; width:76%; margin:0 auto;}
+.map{padding-bottom:35px; text-align:center; color:#feba37; font-size:14px; text-decoration:underline;}
+.guarantee_text{ color:#fff; font-size:12px; padding:10px 25px 50px 25px; line-height:23px;}
+.guarantee_bottom{ position:fixed; bottom:0; left:0;}
+ 
+
+
+/* 大转盘样式 */
+.banner{display:block;width:95%;margin-left:auto;margin-right:auto;margin-bottom: 20px;}
+.banner .turnplate{
+	display:block;
+	position:relative;
+	background-image:url(images/turnplate-bg.png);
+	background-size:100% 100%;
+	width:88%;
+	height:88%;
+	margin-left: auto;
+	margin-right: auto; 
+}
+.banner .turnplate canvas.item{width:100%;}
+.banner .turnplate img.pointer{position:absolute;width:31.5%;height:42.5%;left:34.6%;top:22.5%;z-index:999;}
+.drow-count{
+	text-align:center;
+	margin-right: auto; 
+	margin-left: auto; 
+	margin-bottom:2rem;
+	color:#f9bb3c;
+	font-size:0.9rem;
+}
+.drow-count span{
+	color:#fff;
+}
+.turnplate_top_bg{ background:url(images/turnplate_top.jpg) center top no-repeat scroll; background-size:contain; height:140px;}
+.reward-description{font-size:12px; width:90%; margin:0 auto; height:28px;color:#fff;}
+.win-prize {
+    width:90%;
+    margin: 0 auto;
+    border: 2px solid #D18516;
+    background-color: #791121;
+    border-radius: 1rem;
+    height: 4rem;
+}
+.award-description{font-size:.9rem; width:90%; margin:0 auto; color:#fff; margin-top:-1.5rem;}
+.award-carousel {
+    width:90%;
+    margin: 0 auto;
+    border: 2px solid #D18516;
+    background-color: #791121;
+    border-radius: 1rem;
+}
+
+  #popBackground{ display: none; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background-color: black; z-index:1001; -moz-opacity: 0.7; opacity:.70; filter: alpha(opacity=70);}
+  #showCard{display: none; position: fixed; top: 40%; left: 22%; width: 53%; padding: 8px; border: 1px solid #E8E9F7; background-color: white; z-index:1002; overflow: auto;border-radius:3px;font-size:14px;}
+ .btnGetCard{margin-top:1rem;width:50%;height:2rem;border-radius:4px;font-size:16px;margin-left:25%;margin-right:25%;color:#f9bb3c;}

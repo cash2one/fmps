@@ -1,0 +1,4 @@
+INSERT INTO `weixin_plan_insurancekind` (`id`, `productid`, `planid`, `kindcode`, `kindname`) VALUES ('8a8195b351f192e40151f62e9f3a000b', '8a8195b351f192df0151f62dae090007', '8a8195b351f192df0151f62e50650008', '002', '个人交通事故意外身故/伤残保险金');
+INSERT INTO `weixin_plan_insurancekind` (`id`, `productid`, `planid`, `kindcode`, `kindname`) VALUES ('8a8195b3523360bf01523366b162000b', '8a8195b351f192df0151f62dae090007', '8a8195b3522e514601522e9cdc45000b', '001', '个人交通事故意外身故/伤残保险金');
+INSERT INTO `weixin_plan_insurancekind` (`id`, `productid`, `planid`, `kindcode`, `kindname`) VALUES ('8a8195b3523360bf015233aae835001b', '8a8195b3523334d4015233534e370018', '8a8195b3523360c3015233aac8ee001a', '0001', '个人交通事故意外身故/伤残保险金');
+INSERT INTO `weixin_plan_insurancekind` (`id`, `productid`, `planid`, `kindcode`, `kindname`) VALUES ('8a8195b3523360c30152338745c40016', '8a8195b351f6b7910151f74dc163003a', '8a8195b3522f359701522f500975138d', '001', '个人意外伤害骨折保险');

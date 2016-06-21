@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+.recommend_business{ float:left; width:100%; padding:0 10px; margin-top:8px; padding-bottom: 5px; background-color: #fff;}
+.business_img{ float:left; width:25%; padding-top:9px;}
+.business_img img{ width:75px; height:61px; }
+.business_text{ float:left; width:70%; margin-left:3%; padding-top: 6px; line-height: 12px;}
+@media screen and (min-width:360px){ .business_text{ float:left; width:74%; margin-left:0%;}}
+@media screen and (min-width:375px){ .business_text{ float:left; width:75%; margin-left:-2%;}}
+@media screen and (min-width:414px){ .business_text{ float:left; width:76%; margin-left:-3%;}}
+.business_text .name{ font-size:14px; color:#333; float:left; width:80%; padding-top: 2px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+.business_text .km{ float:left; width:20%; text-align:right; padding-top:3px; }
+.business_text .add{ color:#666; font-size:12px; clear:both; padding-top:8px; border-bottom:1px solid #e8e8e8; padding-bottom:5px;}
+.business_text .ticket_name{ font-size:12px; color:#666; float:left; width:65%; margin-top:5px;}
+.business_text .receive{ float:left; width:35%; margin-top:5px; font-size:10px; }
+.business_text .receive .border{  border:1px dotted #ff4a90; border-radius: 5px; text-align:center; height:20px; color:#ff4a90;}
+.business_text .ticket_name_1{ font-size:12px; color:#666; float:left; width:65%; margin-top:5px;}
+.business_text .receive_1{ float:left; width:35%; margin-top:10px; font-size:10px; }
+.business_text .receive_1 .border{  border:1px solid #85ce4e; border-radius: 5px; text-align:center; height:20px; color:#85ce4e;}
+.business_text .receive_2{ float:left; width:10%; margin-top:5px; font-size:12px; }
+.business_text .receive_2 .border_1{  border-radius:3px; text-align:center; width:20px; height:20px; color:#fff; background-color:#fa952f; margin-left:5px;}
+.project_1{ padding-top:10px; height:25px; font-size:11px;}
+.project_1 .border_1{ border-radius:3px; text-align:center; width:21px; height:17px; color:#fff; background-color:#04d4be; padding:1px 5px 1px 5px; font-size:11px;}
+.project_1 .border_2{ border-radius:3px; text-align:center; width:25px; height:25px; color:#cc0000; padding:2px 3px 2px 3px; border:1px dotted #cc0000;}
+.project_1 .border_3{ border-radius:3px; text-align:center; width:21px; height:17px; color:#fff; background-color:#ff6666; padding:1px 5px 1px 5px; font-size:11px;}
+.project_1 .border_4{ border-radius:3px; text-align:center; width:21px; height:17px; color:#fff; background-color:#5194ef; padding:1px 5px 1px 5px; font-size:11px;}
+.recommend_business .time{padding-top:17px; padding-left:1px;}
+ @media screen and (min-width:360px){ .recommend_business .time{ padding-top:19px;}}
+ @media screen and (min-width:384px){ .recommend_business .time{ padding-top:20px;}}
+ @media screen and (min-width:414px){ .recommend_business .time{ padding-top:21px;}}
+.recommend_business .time .time_text{padding:2px; background:#ff8e3f; color:#fff; border-radius:3px;}

@@ -1,0 +1,1 @@
+INSERT INTO `weixin_product` (`id`, `productname`, `riskshortname`, `internalcode`, `type`, `iscard`, `createtime`, `state`, `imagename`, `imagehref`, `producticon`, `occupationcategory`, `occupationcode`) VALUES ('ff8080814fd59b44014fd94100e40031', '车主守护卡', NULL, 'chezhu', 1, 'Y', '2015-09-17 11:02:40', '1', NULL, 'upload/files/20150917135123CIsLSROI.jpg', NULL, '1', '0001001');

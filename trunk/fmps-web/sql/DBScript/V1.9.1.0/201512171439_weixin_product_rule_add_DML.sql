@@ -1,0 +1,1 @@
+INSERT INTO `weixin_product_rule` (`id`, `productid`, `maxage`, `minage`, `unit`, `rulename`, `ruletype`, `ruleclass`) VALUES ('8a8195b35155f9de015156241bb30002', '8a8195b35112ed70015112f3280d0002', 65, 18, 0, '被保人', '被保人', '年龄规则');

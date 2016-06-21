@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+   body{ background-color:#fff; font-family:"黑体"; font-size:12px;}
+   img {
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0px none;
+       }
+   input{ border:0px solid #111; height:23px; background:#fff;}
+   a{ color: #222;}
+ .top_search{ height:45px; width:100%; border-bottom:1px solid #e8e8e8; background:#f9f8f8;}
+ .top_search_left{ width:75%; float:left; border:1px solid #e8e8e8; height:25px; border-radius:3px; margin-top:10px; margin-left:25px; background:#fff;}
+ .top_search_right{ width:16%; float:left; font-size:14px; color:#4ec6ee; padding:12px 0px 0px 5px; text-align:center;}
+ .top_search_left .top_search_left_img{ width:10%; float:left; padding-top:1px;}
+ .top_search_left .top_search_left_input{ width:10%; float:left;}
+ .certer_search_title{ height:30px; background:#f3f3f3; color:#999; padding:9px 0px 0px 14px;}
+ .certer_search_name{ height:100%; background:#f3f3f3; padding-bottom:40px;}
+ .center_search_text{  width:100%; height:35px; margin:0 auto; text-align:center;}
+ .center_search_text_1{  width:100%; height:35px; margin:0 auto; text-align:center;}
+ .center_search_text .text_1{ float:left; width:30%; padding-top:7px;  margin-top:9px; background:#fff; margin-left:8px; height:30px; border-radius:5px; color:#666;}
+ .center_search_text_1 .text_1{ float:left; width:30%; padding-top:7px; margin-top:9px; background:#fff; margin-left:8px; height:30px; border-radius:5px; color:#666;}
+ .center_search_recently{ border-top:1px solid #e8e8e8; color:#222; text-align:left; height:35px; padding:5px 0px 0px 11px;}
+ .center_search_recently_bottom{ border-top:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8; color:#222; text-align:left; height:35px; padding:5px 0px 0px 11px;}

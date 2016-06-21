@@ -1,0 +1,2 @@
+delete from weixin_huodong where id='8a828ebb49166847014916deca570006';
+INSERT INTO `weixin_huodong` (`id`, `title`, `description`, `priceone`, `onetotal`, `pricetwo`, `twototal`, `pricethree`, `threetotal`, `starttime`, `endtime`, `type`, `gl`, `count`, `accountid`, `totalamount`, `wishing`) VALUES ('8a828ebb49166847014916deca570006', '双11五城百店活动', '加油卡、领券', NULL, NULL, NULL, NULL, NULL, NULL, '2015-11-11 09:00:00', '2015-11-14 00:00:00', '4', NULL, NULL, '8a828ebb4883613201488364bc510001', 0, NULL);

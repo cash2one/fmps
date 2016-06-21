@@ -1,0 +1,6 @@
+Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 23:22:22+0800)
+Maven home: /Users/pollux/Documents/OpenSource/java/maven/apache-maven-3.1.1
+Java version: 1.6.0_65, vendor: Apple Inc.
+Java home: /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+Default locale: zh_CN, platform encoding: EUC_CN
+OS name: "mac os x", version: "10.9.4", arch: "x86_64", family: "mac"

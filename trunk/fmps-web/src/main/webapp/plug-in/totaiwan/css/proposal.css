@@ -1,0 +1,409 @@
+@CHARSET "UTF-8";
+
+.am-header-default {
+	background-color: #fff;
+}
+
+.am-header {
+	position: relative;
+	width: 100%;
+	height: 49px;
+	line-height: 49px;
+	padding: 0 10px;
+	border-bottom: 2px solid #0e90d2;
+}
+
+.am-checkbox {
+	margin-top: 0px;
+}
+
+.am-header .am-header-nav img {
+	height: 20px;
+}
+
+.am-header .am-header-title {
+	margin: 0 1%;
+}
+
+.am-btn {
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 0em 0em;
+	vertical-align: middle;
+	font-size: 14px;
+}
+
+.am-btn-primary {
+	color: #132a39;
+	background-color: #fff;
+	border-color: #fff;
+}
+
+.am-btn-primary:hover {
+	color: #132a39;
+	background-color: #fff;
+	border-color: #fff;
+}
+
+.am-ucheck-icons {
+	top: 3px;
+}
+
+.am-radio, .am-checkbox {
+	margin-top: 0px;
+}
+
+.am-modal-dialog {
+	border-radius: 0;
+	background: #fff;
+}
+
+.am-form-field {
+	display: block;
+	width: 100%;
+	padding: 0em;
+	font-size: 14px;
+	line-height: 1.2;
+	border: 1px solid #fff;
+}
+
+.am-topbar-inverse {
+	background-color: #fff;
+	border-color: #fff;
+	color: #eeeeee;
+}
+
+.am-topbar {
+	min-height: 50px;
+	background: #fff;
+	border-width: 0 0 0px;
+	border-style: solid;
+	border-color: #fff;
+	color: #ffffff;
+}
+
+input{ border:0px solid #fff; 
+    height: 25px;
+    vertical-align: text-top;
+    width: 100%;}
+
+select {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	height: 25px;
+	line-height: 25px;
+	width: 120px;
+	border: rgb(191, 204, 220) 1px solid;
+	border-radius: 3px;
+	display: inline-block;
+	font: normal 12px/25px "微软雅黑", "SimSun", "宋体", "Arial";
+	background-size: 5px 5px, 5px 5px, 25px 25px, 1px 25px;
+	background-color: #fff;
+	background-image: repeating-linear-gradient(225deg, rgb(105, 123, 149)
+		0%, rgb(105, 123, 149) 50%, transparent 50%, transparent 100%),
+		repeating-linear-gradient(135deg, rgb(105, 123, 149) 0%,
+		rgb(105, 123, 149) 50%, transparent 50%, transparent 100%),
+		linear-gradient(#FFFFFF 0%, #F8F9Fd, #EFFAFA 100%),
+		repeating-linear-gradient(rgb(191, 204, 220) 0%, rgb(191, 204, 220)
+		100%);
+	background-repeat: no-repeat;
+	background-position: 101px 10px, 106px 10px, right top, 92px top;
+	-webkit-appearance: none
+}
+
+.option-input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	color: #fff;
+	cursor: pointer;
+	vertical-align: bottom;
+}
+
+.option-input:checked::before {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	content: '\2713';
+	display: inline-block;
+	font-size: 18px;
+	text-align: center;
+	line-height: 20px;
+	background-color: #fff;
+	color: #0e90d2;
+	border: 1px solid #0e90d2;
+	margin-left: -1px;
+	margin-top: -1px;
+	outline: none;
+	position: relative;
+	margin-right: 0.5rem;
+	z-index: 1000;
+}
+
+.option-input:checked::after {
+	background: #fff;
+	content: '';
+	display: block;
+	position: relative;
+	z-index: 100;
+}
+
+.info_index {
+	padding: 0 20px;
+	font-size: 14px;
+}
+
+.info_form_1 {
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	padding-top: 25px;
+	color: #132a39;
+}
+
+.info_form_1 .text_name {
+	width: 23%;
+	float: left;
+	text-align: left;
+}
+
+.info_form_1 .text_input {
+	width: 77%;
+	float: left;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.info_form_2 {
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	padding-top: 25px;
+	color: #132a39;
+}
+
+.info_form_2 .text_type {
+	width: 23%;
+	float: left;
+	text-align: left;
+}
+
+.info_form_2 .text_input {
+	width: 77%;
+	float: left;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.info_form_3 {
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	padding-top: 25px;
+	color: #132a39;
+}
+
+.info_form_3 .text_type {
+	width: 23%;
+	float: left;
+	text-align: left;
+}
+
+.info_form_3 .text_input {
+	width: 77%;
+	float: left;
+}
+
+.info_form_4 {
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	padding-top: 25px;
+	color: #132a39;
+	border-bottom: 1px solid #e8e8e8;
+	padding-bottom: 20px;
+}
+
+.info_form_4 .text_type {
+	width: 23%;
+	float: left;
+	text-align: left;
+}
+
+.info_form_4 .text_nbsp {
+	width: 46%;
+	float: left;
+}
+
+.info_form_4 .text_input {
+	width: 31%;
+	float: left;
+}
+
+.info_form_5 {
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	padding-top: 25px;
+	color: #132a39;
+	margin-bottom: 10px;
+}
+
+.info_form_5 .text_type {
+	width: 30%;
+	float: left;
+	text-align: left;
+}
+
+.info_form_5 .text_nbsp {
+	width: 30%;
+	float: left;
+}
+
+.info_form_5 .text_input {
+	width: 30%;
+	float: left;
+}
+
+.info_table {
+	padding-top: 20px;
+}
+
+.info_table table {
+	border: 1px solid #e8e8e8;
+}
+
+.info_table table tr td{
+	border: 1px solid #e8e8e8;
+}
+
+.info_form_6 {
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	padding-top: 20px;
+	color: #132a39;
+}
+
+.info_form_6 .text_type {
+	width: 35%;
+	float: left;
+	text-align: left;
+}
+
+.info_form_6 .text_input {
+	width: 65%;
+	float: left;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.info_form_7 {
+	clear: both;
+	padding-top: 20px;
+	font-size: 12px;
+}
+
+.pay_button {
+	width: 100%;
+	float: left;
+	border-top: #e8e8e8 solid 1px;
+}
+
+.pay_button_money {
+	width: 55%;
+	float: left;
+	color: #d10e1f;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.pay_button_anniu {
+	width: 45%;
+	float: left;
+	background: #02bd16;
+	font-size: 16px;
+	height: 50px;
+	text-align: center;
+}
+
+.am-modal-bd {
+	font-size: 12px;
+	color: #222;
+	padding: 5px 10px;
+}
+
+.am-modal-hd+.am-modal-bd {
+	padding-top: 10px;
+}
+
+.keyword {
+	border: 1px solid #E0D5D5;
+	width: 60%;
+	height: 6%;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
+.searchOccupations {
+	border-radius: 5px;
+	font-size: 14px;
+	height: 6%;
+	width: 22%;
+	background-color: #6CADCF;
+	color: #fff;
+	margin-left: 10px;
+}
+
+.viewOccupations {
+	background-color: #F2FBFC;
+	/* 	 margin-top: 20%; */
+	margin-bottom: 10%;
+}
+
+.am-modal-bd {
+	font-size: 12px;
+	text-align: center;
+	padding: 5px 5px 5px 5px;
+}
+
+.am-popup {
+	text-align: center;
+	top: 35%;
+}
+
+.am-modal-hd .am-close {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+/*loading*/
+.grid {
+	overflow: hidden;
+}
+
+.cell {
+	float: left;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	display: table;
+}
+
+.card {
+	border-radius: 15px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	height: 380px;
+}
+/*loading*/
+header {
+	height: 50px;
+	line-height: 50px;
+}

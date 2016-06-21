@@ -1,0 +1,23 @@
+CREATE TABLE `pay_notify` (
+	`id` VARCHAR(32) NOT NULL COMMENT '主键',
+	`out_trade_no` VARCHAR(64) NULL DEFAULT NULL COMMENT '订单号',
+	`subject` VARCHAR(100) NULL DEFAULT NULL COMMENT '商品名称',
+	`trade_no` VARCHAR(32) NULL DEFAULT NULL COMMENT '交易号',
+	`buyer_email` VARCHAR(100) NULL DEFAULT NULL COMMENT '买家',
+	`trade_status` VARCHAR(20) NULL DEFAULT NULL COMMENT '交易状态',
+	`total_fee` VARCHAR(15) NULL DEFAULT NULL COMMENT '订单总额',
+	`gmt_create` VARCHAR(50) NULL DEFAULT NULL COMMENT '交易创建时间',
+	`seller_id` VARCHAR(50) NULL DEFAULT NULL COMMENT '卖家ID ',
+	`gmt_payment` VARCHAR(50) NULL DEFAULT NULL COMMENT '交易付款时间',
+	`seller_email` VARCHAR(100) NULL DEFAULT NULL COMMENT '卖家账号',
+	`gmt_close` VARCHAR(50) NULL DEFAULT NULL COMMENT '交易关闭时间',
+	`price` VARCHAR(15) NULL DEFAULT NULL COMMENT '商品单价',
+	`buyer_id` VARCHAR(50) NULL DEFAULT NULL COMMENT '买家ID',
+	`payment_type` VARCHAR(10) NULL DEFAULT NULL COMMENT '支付类型',
+	`notify_type` VARCHAR(50) NULL DEFAULT NULL COMMENT '通知类型',
+	`notify_time` VARCHAR(50) NULL DEFAULT NULL COMMENT '通知时间',
+	`notify_id` VARCHAR(64) NULL DEFAULT NULL COMMENT '通知编号'
+)
+COMMENT='第三方支付异步通知记录'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;

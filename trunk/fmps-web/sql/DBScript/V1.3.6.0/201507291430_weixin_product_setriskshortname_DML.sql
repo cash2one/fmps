@@ -1,0 +1,1 @@
+update weixin_product product set product.riskshortname=product.productname

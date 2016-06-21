@@ -1,0 +1,1 @@
+update  weixin_menuentity set name='新车车牌变更' where  id='402889ff47asd123014728f60sdf2345' ;

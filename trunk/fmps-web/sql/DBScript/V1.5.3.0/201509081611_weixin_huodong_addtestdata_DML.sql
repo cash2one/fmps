@@ -1,0 +1,2 @@
+delete from weixin_huodong where id='8a828ebb49166847014916deca570005';
+INSERT INTO `weixin_huodong` (`id`, `title`, `description`, `priceone`, `onetotal`, `pricetwo`, `twototal`, `pricethree`, `threetotal`, `starttime`, `endtime`, `type`, `gl`, `count`, `accountid`, `totalamount`, `wishing`) VALUES ('8a828ebb49166847014916deca570005', '领赠险送红包(生产测试)', '领赠险送红包(生产测试)', '1', 6000, '3', 3000, '5', 1000, '2015-09-08 08:00:00', '2015-09-14 23:59:59', '4', '100/100', '1', '8a828ebb4883613201488364bc510001', 10, '感谢参加富邦财险领赠险送红包活动(生产测试)');

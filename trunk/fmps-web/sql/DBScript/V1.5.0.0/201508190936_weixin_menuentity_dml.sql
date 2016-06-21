@@ -1,0 +1,1 @@
+update weixin_menuentity set status=1;

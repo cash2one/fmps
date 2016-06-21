@@ -1,0 +1,1 @@
+ALTER TABLE `weixin_transaction_record`	ADD COLUMN `signature` VARCHAR(100) NULL COMMENT 'ЧЉУћаЃбщ' AFTER `respDateTime`;

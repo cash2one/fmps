@@ -1,0 +1,496 @@
+<!doctype html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>你想要的券都在这儿</title>
+
+<script> 
+ //全局变量 
+   var latitude=24.482166;   //用户当前经度
+   var longitude=118.099313;  //用户当前纬度  
+   var domain="http://mp.fubon.com.cn"; 
+   var APPID="wxeee8b84bc1946b90"; 
+   var giftSetId=[12,85,10,10,7,9,73,80,76,86,207,82,8,81,94,74,92,75,12,		//带图片的券	ID     19个
+                  8,9,11,7,81,86,87,70,72,73,74,75,77,83,207,88,89,90,91,12,92]; //区里的券ID   21个		
+   var countyCode ;
+   var countyJson ={350203:"思明区",350206:"湖里区 ",350211:"集美区",350212:"同安区"};
+		   	
+</script>
+
+<link href="http://cdn.amazeui.org/amazeui/2.2.1/css/amazeui.min.css" rel="stylesheet" type="text/css" />
+<link href="css/eleven_index.css" rel="stylesheet" type="text/css"  >
+
+	
+</head>
+<body >
+<input type ="hidden" id="city" name="city" value="xiamen">	
+<input type="hidden" id="endtime" name="endtime" value="2015/11/06 19:38:00">  
+  <header data-am-widget="header" class="am-header am-header-default">
+	<div id="doc-dropdown-justify" >
+	  <div class="am-dropdown" id="doc-dropdown-js">
+	      <button class="am-btn am-btn-primary am-dropdown-toggle" data-am-dropdown-toggle>厦门 <span class="am-icon-caret-down"></span></button>
+		  <ul class="am-dropdown-content">
+			<li><a href="#" onclick="RefreshList('quanzhou');">泉州</a></li>
+			<li><a href="#" onclick="RefreshList('zhangzhou');">漳州</a></li>
+			<li><a href="#" onclick="RefreshList('fuzhou');">福州</a></li>
+			<li><a href="#" onclick="RefreshList('chengdu');">成都</a></li>
+		  </ul>
+	  </div>
+	</div>	  
+  
+ </header>
+	<div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{&quot;directionNav&quot;:false}' >
+	  <ul class="am-slides">
+	      <li><a href="#" onclick="GoFuelCard()" ><img src="images/eleven_index_big_1.jpg"></a></li>
+	      <li><a href="#" onclick="goUber();"><img src="images/eleven_index_big_3.jpg"></a></li>
+	      <li><a href="#" onclick="goEdaijia();"><img src="images/eleven_index_big_6.jpg"></a></li>
+	  </ul>
+	</div>
+	<div class="am-modal am-modal-no-btn" tabindex="-1" id="time-modal">
+		<div class="am-modal-dialog">
+			<div class="am-modal-hd">距离活动开始时间</div>
+			<div id="eleven_time" class="eleven_time">00 : 00 : 00 : 00</div>
+			<div class="eleven_time_text">
+				<div class="text_1">天</div>
+				<div class="text_2">时</div>
+				<div class="text_3">分</div>
+				<div class="text_4">秒</div>
+			</div>
+			<div class="pop_eleven_bg">
+				<img src="images/pop_eleven_bg.jpg" width="210" height="204">
+			</div>
+		</div>
+	</div>
+<div class="eleven_index_center">
+	  <div class="eleven_index_center_top_img"><img src="images/eleven_index_center_top_img.png"></div>
+	  <div class="eleven_index_center_top_img_2">
+		  <div class="img_a_1"><a href="#" class="gifts"><img src="images/xiamen/pro_gifts_1.jpg"></a></div>
+		  <div class="img_a_2">&nbsp;</div>
+		  <div class="img_a_1"><a href="#" class="gifts"><img src="images/xiamen/pro_gifts_2.jpg"></a></div>
+		  <div class="img_a_2">&nbsp;</div>
+		  <div class="img_a_1"><a href="#" class="gifts"><img src="images/xiamen/pro_gifts_3.jpg?version=24234234234234
+		  "></a></div>
+	 </div>
+ 
+	 <div class="eleven_index_center_top_img_3">
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_1.jpg" src ="images/loading.gif"></a></div>
+		  <div class="pro_2">&nbsp;</div>
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_2.jpg" src ="images/loading.gif"></a></div>
+		  <div class="pro_2">&nbsp;</div>
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_3.jpg" src ="images/loading.gif"></a></div>
+	 </div>
+ 
+	 <div class="eleven_index_center_top_img_3">
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_4.jpg" src ="images/loading.gif"></a></div>
+		  <div class="pro_2">&nbsp;</div>
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_5.jpg" src ="images/loading.gif"></a></div>
+		  <div class="pro_2">&nbsp;</div>
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_6.jpg" src ="images/loading.gif"></a></div>
+	 </div>
+	 <div class="banner_2"><a href="#" onclick="goGasOline();"><img data-echo="images/xiamen/banner_middle_2.jpg" src ="images/loading.gif"></a></div>
+ 
+	<div class="eleven_index_center_top_img_4">
+		 <div class="eleven_index_center_top_img"><img data-echo="images/eleven_index_center_top_img.png" src ="images/loading.gif"></div>
+	</div>
+
+	 <div class="eleven_index_center_top_img_3">
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_7.jpg" src ="images/loading.gif"></a></div>
+		  <div class="pro_2">&nbsp;</div>
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_8.jpg" src ="images/loading.gif"></a></div>
+		  <div class="pro_2">&nbsp;</div>
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_9.jpg" src ="images/loading.gif"></a></div>
+	 </div>
+ 
+	 <div class="eleven_index_center_top_img_3">
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_10.jpg" src ="images/loading.gif"></a></div>
+		  <div class="pro_2">&nbsp;</div>
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_11.jpg" src ="images/loading.gif"></a></div>
+		  <div class="pro_2">&nbsp;</div>
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_12.jpg" src ="images/loading.gif"></a></div>
+	 </div>
+	 
+	 <div class="eleven_index_center_top_img_3">
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_13.jpg" src ="images/loading.gif"></a></div>
+		  <div class="pro_2">&nbsp;</div>
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_14.jpg?version=5353666
+		  " src ="images/loading.gif"></a></div>
+		  <div class="pro_2">&nbsp;</div>
+		  <div class="pro_1"><a href="#" class="gifts"><img data-echo="images/xiamen/voucher_15.jpg" src ="images/loading.gif"></a></div>
+	 </div>
+ 	 <div class="banner_2"><a href="#" class="gifts"><img data-echo="images/xiamen/banner_middle_1.jpg" src ="images/loading.gif"></a></div>
+</div>
+
+
+
+ <div class=" eleven_index_urban" >
+	<div class="am-dropdown areaDropdown" >
+		      <button class="am-btn am-btn-default am-dropdown-toggle" data-am-dropdown-toggle >思明区<span class="am-icon-caret-down"></span></button>
+			  <ul class="am-dropdown-content">
+				<li><a href="javascript:void(0)" onClick="RefreshCoupon('350203','思明区');">思明区</a></li>
+				<li><a href="javascript:void(0)" onClick="RefreshCoupon('350206','湖里区');">湖里区</a></li>
+				<li><a href="javascript:void(0)" onClick="RefreshCoupon('350211','集美区');">集美区</a></li>
+                <li><a href="javascript:void(0)" onClick="RefreshCoupon('350212','同安区');">同安区</a></li>
+			  </ul>
+	 </div>
+ </div>
+ <div class="eleven_coupon_center">
+ <!--思明-->
+	  <div class="eleven_coupon 350203">
+		  <div style="height:10px;">&nbsp;</div>
+		  <a href="#" class="gifts">
+			  <div class="eleven_coupon_1">
+				   <div class="eleven_coupon_left">100元现金抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门市宾联轿车服务有限公司</div>
+			  </div>
+		  </a>
+	  </div>
+	  <div class="eleven_coupon 350203">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">100元空调清洗抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门德众汽车维修有限公司</div>
+			  </div>
+	      </a>
+	  </div>
+	  <div class="eleven_coupon 350203">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">350元全车封釉抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门德众汽车维修有限公司</div>
+			  </div>
+	      </a>
+	  </div>
+	  <div class="eleven_coupon 350203">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1">
+				   <div class="eleven_coupon_left">机油保养工时券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门市宾联轿车服务有限公司</div>
+			  </div>
+		  </a>
+	  </div>
+	  <div class="eleven_coupon 350203">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">车辆综合性能检测券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门市顺龙汽车维修有限公司</div>
+			  </div>
+	      </a>
+	  </div>
+	  <div class="eleven_coupon 350203">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1">
+				   <div class="eleven_coupon_left">300元消毒打蜡抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门兴骏汽车服务有限公司</div>
+			  </div>
+	      </a>
+	  </div>
+	  <div class="eleven_coupon 350203">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1">
+				   <div class="eleven_coupon_left">350元室内清洗抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门兴骏汽车服务有限公司</div>
+			  </div>
+	      </a>
+	  </div>
+  <!--湖里-->
+	  <div class="eleven_coupon 350206">
+		  <div style="height:10px;">&nbsp;</div>
+		  <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">汽车前挡玻璃修复抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门市福耀汽车玻璃有限公司</div>
+			  </div>
+	      </a>
+	  </div>
+      <div class="eleven_coupon 350206">
+		  <div style="height:10px;">&nbsp;</div>
+		  <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">200元工时抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门建发进口大众汽车售后服务中心</div>
+		 	 </div>
+	      </a>
+	  </div>
+      <div class="eleven_coupon 350206">
+		  <div style="height:10px;">&nbsp;</div>
+		  <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">3L机油抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门竞速汽车服务有限公司</div>
+			  </div>
+	      </a>
+	  </div>
+      <div class="eleven_coupon 350206">
+		  <div style="height:10px;">&nbsp;</div>
+		  <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">1000减500钣喷券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门竞速汽车服务有限公司</div>
+		  	  </div>
+	      </a>
+	  </div>
+      <div class="eleven_coupon 350206">
+		  <div style="height:10px;">&nbsp;</div>
+		  <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">100元喷漆券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门瑞驭汽车服务有限公司</div>
+			  </div>
+	      </a>
+	  </div>
+      <div class="eleven_coupon 350206">
+		  <div style="height:10px;">&nbsp;</div>
+		  <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">150元臭氧消毒券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门瑞驭汽车服务有限公司</div>
+			  </div>
+	      </a>
+	  </div>
+      <div class="eleven_coupon 350206">
+		  <div style="height:10px;">&nbsp;</div>
+		  <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">三清工时券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门昕华泰汽车服务有限公司</div>
+		 	 </div>
+	      </a>
+	  </div>
+       <div class="eleven_coupon 350206">
+		  <div style="height:10px;">&nbsp;</div>
+		  <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">满600减100抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门宾利汽车服务有限公司</div>
+		  		</div>
+	      </a>
+	  </div>
+      
+      <!--集美-->
+	  <div class="eleven_coupon 350211">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">100元钣金抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门兴信泰汽车维修有限公司集美店</div>
+			  </div>
+	      </a>
+	  </div>
+     <div class="eleven_coupon 350211">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">烤漆抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门兴信泰汽车维修有限公司集美店</div>
+			  </div>
+	      </a>
+	  </div>
+     <div class="eleven_coupon 350211">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">100元钣金抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门兴信泰汽车维修有限公司杏北店</div>
+			  </div>
+	      </a>
+	  </div>
+     <div class="eleven_coupon 350211">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">烤漆抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门兴信泰汽车维修有限公司杏北店</div>
+			  </div>
+	      </a>
+	  </div>
+      <!--同安-->
+	  <div class="eleven_coupon 350212">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">维修代步车服务</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门华贤凯汽车服务有限公司</div>
+			  </div>
+	      </a>
+	  </div>
+       <div class="eleven_coupon 350212">
+	      <div style="height:10px;">&nbsp;</div>
+	      <a href="#" class="gifts">
+			  <div class="eleven_coupon_1 ">
+				   <div class="eleven_coupon_left">100元现金抵用券</div>
+				   <div class="eleven_coupon_right"><span class="viewCoupon">查 看</span></div>
+				   <div class="eleven_coupon_bottom">厦门泽骏车汇</div>
+			  </div>
+	      </a>
+	  </div>
+ </div>
+ <div class="getMoreCoupon" onclick="getMore();">查看更多</div>
+ 
+<div style="height:47px;">&nbsp;</div>
+<div data-am-widget="tabs" class="am-tabs am-tabs-default" >
+  <ul class="fb-am-tabs-nav am-cf  am-navbar " >
+    <li class="">
+      <a href="javascript:void(0)"  onclick="goRepairPlate();">
+        <span class="am-icon-car"></span>  
+        <span class="am-tabs-label">爱车之家</span> 
+      </a>
+    </li>
+    <li class="">
+      <a href="javascript:void(0)" onclick="goPersonCenter();">
+        <span class="am-icon-street-view"></span>
+        <span class="am-tabs-label">个人中心</span>   
+      </a>
+    </li>
+    <li class="">
+      <a href="javascript:void(0)" onclick="goMyGift();">
+        <span class="am-icon-gift"></span>
+        <span class="am-tabs-label">我的礼包</span>    
+      </a>
+    </li>
+  </ul>
+</div>	
+</body>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3b62d4c2f2d2718cfcdca0a716aed32e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script charset="utf-8"	src="http://map.qq.com/api/js?v=2.exp&libraries=drawing,geometry,autocomplete,convertor"></script> 
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.amazeui.org/amazeui/2.4.2/js/amazeui.min.js"></script>
+<script src="js/echo.min.js"></script>
+<script src="js/double11.js"></script>
+<script> 	
+$().ready(function () {
+	RefreshCoupon('350203','思明区');
+	$(".areaDropdown").dropdown('close');
+});
+
+	
+	function weixininit(){		
+		getLocation();			
+	}
+
+	// 7.2 获取当前地理位置
+   function getLocation(){	
+	    wx.getLocation({
+	    success: function (res) {    	 
+	          longitude=res.longitude;
+	    	  latitude=res.latitude;
+	    	  initLocation(latitude,longitude);
+	        },
+	       cancel: function (res) {
+	         alert('用户拒绝授权获取地理位置');
+	       }
+	     });   
+	   }
+     
+   //根据 用户实际位置定位 	 
+   function initLocation(latitude,longitude){	 
+  	 var center = new qq.maps.LatLng(latitude,longitude);
+  	    map = new qq.maps.Map(document.getElementById('container'),{
+  	        center: center,
+  	        zoom: 13
+  	    });
+  	    var info = new qq.maps.InfoWindow({map: map});
+  	    geocoder = new qq.maps.Geocoder({
+  	    	 complete : function(result){
+  	    		 
+  	    		 /* ********************** */
+  	    		 var locateCity = result.detail.addressComponents.city;
+  	    		 if(locateCity == '漳州市'){
+  	    			RefreshList('zhangzhou');
+  	    		 }else if(locateCity == '泉州市'){
+  	    			RefreshList('quanzhou');
+  	    		 }else if(locateCity == '福州市'){
+  	    			RefreshList('fuzhou');
+  	    		 }else if(locateCity == '成都市'){
+  	    			RefreshList('chengdu');
+  	    		 }
+  		        	/* $('.doc-dropdown-js').val(result.detail.addressComponents.city);   */		        	    	
+  	            map.setCenter(result.detail.location);
+  	            var marker = new qq.maps.Marker({
+  	                map:map,
+  	                position: result.detail.location
+  	            });
+  	            qq.maps.event.addListener(marker, 'click', function() {
+  	                info.open();
+  	                info.setContent('<div style="width:280px;height:100px;">'+
+  	                    result.detail.address+'</div>');
+  	                info.setPosition(result.detail.location);
+  	            });
+  	        }
+  	    });	    
+  	    geocoder.getAddress(center);  //根据 经纬度 定位用户所属市区、地址 
+     }
+  
+   
+   
+   /* 定位 */
+   function doLocate(){
+	 //开始微信获取地理位置 
+		var getJssdkUrl =domain+"/fo/dobule11Controller.do?JsdkString";
+	//	 alert(getJssdkUrl);	 		 
+		$.ajax({
+			type : 'POST',
+			url : getJssdkUrl,
+			data : "&attachurl=/plug-in/huodong/dobule11/index.html",
+			dataType : "json",
+			error : function() {// 请求失败处理函数
+				alert('自动定位失败，请手动选择您所在的城市。');			
+			},
+			success : function(json) {
+				var result = "fail";
+				if (json.success&&json.obj.length>5) {						
+					var jssdk = eval('(' + json.obj + ')');					
+				 wx.config(jssdk);					
+				 wx.ready(function () { 
+						  weixininit();
+					});  
+				 wx.error(function (res) {	
+					  alert(res.errMsg);	
+				  });
+				
+				} else {
+					  alert('jssdk请求失败');						 				
+				}
+			}
+		}); 	
+   }
+   
+</script>
+
+</html>

@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, select, th, td {
+	margin:0;
+	padding:0
+}
+body {
+	background:#f1efef;
+	font:14px/1.5 "Microsoft YaHei", Helvetica, sans-serif;
+	color:#000;
+	max-width:640px;
+	background-size:100% 100%;
+	-webkit-text-size-adjust:100%!important
+}
+button, input, textarea, select {
+	font-size:100%;
+	font-family:inherit;
+	color:inherit;
+}
+select::-ms-expand {
+display:none
+}
+select:focus, select:active {
+	background-color:transparent
+}
+input[type=text]::-ms-clear, input[type=tel]::-ms-clear, input[type=number]::-ms-clear {
+display:none
+}
+body, a, img, label, button, input, textarea, select {
+	outline:none;
+	-webkit-tap-highlight-color:transparent
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance:none
+}
+input::-webkit-input-placeholder {
+color:#9a9a9a
+}
+h1, h2, h3, h4, h5, h6, strong, b {
+	font-weight:400
+}
+ul, ol {
+	list-style:none
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0
+}
+img {
+	border:none
+}
+a {
+	color:#1a76cc;
+	text-decoration:none
+}
+a, img {
+	-webkit-touch-callout:none;
+	-webkit-user-select:none
+}
+.top_tips{ background:#52cffb; width:100%; color:#fff; height:.35rem; text-align:center; line-height:.35rem; font-size:.12rem;}
+.card{ background:url(../images/card_bg.png) scroll 0 0 no-repeat; background-size:contain; height:1.6rem; width:90%; margin:0 auto; margin-top:.24rem;}
+.info_1{ width:100%; padding-top:.1rem; color:#FFFFFF; font-size:.12rem; line-height: .21rem; }
+.info_1 .info_left{ float:left; width:10%;}
+.info_1 .info_middle{ float:left; width:30%; text-align:right; }
+.info_1 .info_right{ float:left; width:60%; text-align:left; text-indent:.13rem;}
+.info_right .col{ color:#FF0000; padding-left:.1rem; padding-right:.1rem; text-decoration:underline;}
+.info_2{ width:100%; padding-top:.8rem; color:#FFFFFF; font-size:.12rem;}
+.info_2 .info_left{ float:left; width:20%; }
+.info_2 .info_middle{ float:left; width:20%; text-align:right; }
+.info_2 .info_right{ float:left; width:60%; text-align:left; text-indent:.13rem;}

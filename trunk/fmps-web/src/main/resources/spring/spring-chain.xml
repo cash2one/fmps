@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://cxf.apache.org/configuration/beans http://cxf.apache.org/schemas/configuration/cxf-beans.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+	<bean id="clientWsChain" class="org.apache.commons.chain.impl.ChainBase">
+		<constructor-arg>
+			<util:list>
+				<ref bean="innerRequestConvertToExternlRequest"/>
+				<ref bean="requestToXml"/>
+				<ref bean="requestSender"/>							
+			</util:list>
+		</constructor-arg>
+	</bean>
+	
+ 
+	<bean id="clientWsResponseChain" class="org.apache.commons.chain.impl.ChainBase">
+		<constructor-arg>
+			<util:list>			    	
+				<ref bean="externlResponseConvertToInnerResponse"/>
+				<ref bean="packetPutDB"/>				
+			</util:list>
+		</constructor-arg>
+	</bean> 
+	
+	<bean id="telesaleClientWsChain" class="org.apache.commons.chain.impl.ChainBase">
+		<constructor-arg>
+			<util:list>
+				<ref bean="telesaleRequestSender"/>							
+			</util:list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="telesaleClientWsResponseChain" class="org.apache.commons.chain.impl.ChainBase">
+		<constructor-arg>
+			<util:list>			    	
+				<ref bean="telesaleResponseFromXml"/>
+				<ref bean="telesalePacketPutDB"/>				
+			</util:list>
+		</constructor-arg>
+	</bean>
+	
+	<!-- restful方式接口链条 -->
+	<bean id="restClientWsChain" class="org.apache.commons.chain.impl.ChainBase">
+		<constructor-arg>
+			<util:list>
+				<ref bean="restClientRequestSender"/>							
+			</util:list>
+		</constructor-arg>
+	</bean>	
+
+	<!-- restful方式接口 -->	
+	<bean id="restClient" class="cn.com.fubon.rest.commands.client.RestClient" />
+	<bean id="restClientRequestSender" class="cn.com.fubon.rest.commands.client.RestClientRequestSender" >
+	   <property name="restClient" ref="restClient" />
+	</bean>
+	
+	<!-- restful方式加油宝接口 -->	
+	<bean id="restClientGasolineGiftWsChain" class="org.apache.commons.chain.impl.ChainBase">
+		<constructor-arg>
+			<util:list>
+				<ref bean="restClientGasolineGiftRequestSender"/>							
+			</util:list>
+		</constructor-arg>
+	</bean>	
+	
+	<bean id="restClientGasolineGiftRequestSender" class="cn.com.fubon.rest.commands.client.RestClientGasolineGiftRequestSender" >
+	   <property name="restClient" ref="restClient" />
+	</bean>
+	
+	<!-- 内部请求对象转换为外部请求对象 -->
+	<bean id="innerRequestConvertToExternlRequest" 
+		class="cn.com.fubon.webservice.commands.client.InnerRequestConvertToExternalRequest" />
+	
+	<!-- 请求对象转换为XML格式 -->	
+	<bean id="requestToXml" class="cn.com.fubon.webservice.commands.client.RequestToXml" />
+	
+	<!-- XML格式请求调用WebService -->	
+	<bean id="requestSender" class="cn.com.fubon.webservice.commands.client.RequestSender" />
+	
+	<!-- 外部响应对象转换为内部响应对象 -->	
+	<bean id="externlResponseConvertToInnerResponse" class="cn.com.fubon.webservice.commands.client.ExternalResponseConvertToInnerResponse" />
+	
+	<!-- 报文入库 -->
+	<bean id="packetPutDB" class="cn.com.fubon.webservice.commands.client.PacketPutDB" />
+	
+	<!-- 电销 -->
+	<bean id="telesaleRequestSender" class="cn.com.fubon.webservice.commands.telesaleclient.TelesaleRequestSender" />
+	<bean id="telesaleResponseFromXml" class="cn.com.fubon.webservice.commands.telesaleclient.TelesaleResponseFromXml" />
+	<bean id="telesalePacketPutDB" class="cn.com.fubon.webservice.commands.telesaleclient.TelesalePacketPutDB" />
+	
+</beans>

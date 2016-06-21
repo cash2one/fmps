@@ -1,0 +1,1 @@
+alter table weixin_report_info add index(registNo);

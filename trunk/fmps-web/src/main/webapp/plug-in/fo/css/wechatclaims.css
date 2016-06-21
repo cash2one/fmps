@@ -1,0 +1,415 @@
+@charset "utf-8";
+/*----------scroll style----------start*/
+
+/*兼容webkit内核浏览器*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(224,236,255,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(224,236,255,0.4); 
+}
+
+/*----------scroll style----------end*/
+/*----------main----------start*/
+.main_left {
+	width: 208px;/*有滚动条的时候220px*/
+	padding: 1px;
+	overflow-x:hidden;
+}
+
+.main_right {
+	margin: 0;
+	padding: 0;
+}
+
+.main_right_auto {
+	width: auto;
+}
+
+.main_right_title {
+	text-align: center;
+	margin-top: 10px; font-size: 30px; font-variant: 700; color: #0469b7;
+}
+
+.main_right_title1 {
+	text-align: left;
+	padding-left: 15px;
+}
+
+.main_right_notprocessed {
+	width: auto;
+	border-top: 1px solid #bfbfbf;
+	border-bottom: 1px solid #bfbfbf;
+	height: 205px;
+	width: 100%;
+}
+
+.main_right_registnocount {
+	float: left;
+	width: 260px;
+}
+
+.main_right_registnocount_content {
+	text-align: center;
+	font-size: 12px;
+	margin-top: 15px;
+}
+
+.main_right_registnocount_icon {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.main_right_totalNotReadedMessageCount {
+	float: left;
+	width: 260px;
+}
+
+.main_right_totalNotReadedMessageCount_content {
+	text-align: center;
+	font-size: 12px;
+	margin-top: 15px;
+}
+
+.main_right_totalNotReadedMessageCount_icon {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.main_right_title2 {
+	text-align: left;
+	padding-left: 15px;
+	clear: both;
+	padding-top: 15px;
+}
+
+.main_right_quickaccess {
+	width: auto;
+	border-top: 1px solid #bfbfbf;
+	border-bottom: 1px solid #bfbfbf;
+	height: 205px;
+	width: 100%;
+}
+
+.main_right_quickaccess_content {
+	font-size: 12px;
+	float: left;
+	width: 260px;
+	padding-top: 50px;
+}
+
+.main_right_title3 {
+	width: 260px;
+	text-align: center;
+	margin-top: 25px;
+	float: left;
+}
+
+.main_right_quickaccess_content_padding {
+	padding-top: 10px;
+}
+
+.main_right_quickaccess_content_link {
+	border-radius: 10px;
+	color: #FFFFFF;
+	background: #6171a4;
+	width: 60px;
+	margin-top: 10px;
+	text-align: center;
+}
+/*----------main----------end*/
+
+/*----------left regitstnolist----------start */
+.menu_list {
+	margin: 1px;
+	width: 180px;
+}
+
+.menu_head {
+	width: 187px;
+	height: 117px;
+	padding-left: 8px;
+	font-size: 10px;
+	color: #525252;
+	cursor: pointer;
+	border: 1px solid #95B8E7;
+	position: relative;
+	background: #E0ECFF;
+	margin: 1px;
+}
+
+.menu_list .current {
+	background: #4a8fe8;/*#f1f1f1*/
+	color: #fff;
+}
+
+.menu_head_content {
+	width: 100%;
+	overflow: hidden;
+}
+
+.menu_head_onclick {
+	width: 100%;
+	height:100%;
+}
+.menu_head_content_img {
+	width: 35%;
+	height: 60px;
+	float: left;
+	line-height: 60px;
+	text-align: center;
+}
+
+input[name='menu_head_input']{/*案件列表隐藏文本框焦点*/
+	border-style:none;
+	background-color:#E0ECFF;
+	width: 90%;
+}
+
+.menu_head_content_name {
+	width: 53%;
+	height: auto;
+	float: left;
+	line-height: 18px; padding-top: 8px;
+}
+
+.menu_head_content_lisens {
+	width: 100%;
+	height: 20px;
+	float: left;
+	text-align: left;
+	line-height: 30px; 
+	text-indent: 8px;/*第一行缩进*/
+}
+
+.menu_head_content_msg {
+	width:12%;float:left;
+}
+.menu_head_content_msg_count1 {
+	-webkit-border-radius:20px; 
+	-moz-border-radius:20px; 
+	-o-border-radius:20px;
+	border-radius:20px; 
+	background-color:#f56c0b; 
+	width: 20px; 
+	height: 20px; 
+	margin-top: 2px; 
+	text-align: center; 
+	float: left; 
+	color: #fff; 
+	line-height:19px;
+}
+
+.menu_head_content_msg_count2 {
+	width: 20px; 
+	height: 20px; 
+	margin-top: 2px; 
+	text-align: center; 
+	float: left; 
+	line-height:19px;
+}
+
+.menu_head_content_registno {
+	width: 100%;
+	height: 40px;
+	float: left;
+	line-height: 30px;
+	text-indent: 6px;/*第一行缩进*/
+}
+/*----------left regitstnolist----------end */
+
+/*----------right customerchat_main----------start */
+.p_panel {
+	padding: 3px;
+	width: 100%;
+	height: 100%;
+}
+
+.p_right {
+	text-align: left;
+	border: 1px solid #ccc;
+	border-left: 0;
+	width: 209px;
+	background: #fafafa;
+	padding-top: 2px;
+}
+
+.p_right_registno {
+	width: 90%;
+	height: 90%;
+	padding: 2px 5px 5px 5px;
+	line-height: 24px;
+}
+
+.p_right_registno_content {
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.p_clear_both_top {
+	height: 5px;
+	clear: both;
+}
+
+.p_clear_both {
+	height: 10px;
+	clear: both;
+}
+
+.p_left {
+	border: 1px solid #ccc;
+}
+
+/*发送窗口样式*/
+.p_left_send {
+	height: 240px;
+}
+
+.p_left_send_upload {
+	height: 15px;
+	border-bottom: 1px #dbdbdb solid;
+	width: 99%;
+	padding: 2px 5px;
+}
+
+.p_left_send_upload_a {
+	border: 0px;
+}
+
+.p_left_send_upload_img {
+	border: 0px;
+}
+
+.p_left_send_textarea {
+	border: 0;
+	width: 99.9%;
+	height: 75%;
+	resize: none;
+}
+
+.p_left_send_button {
+	text-align: right;
+	border-top: 1px solid #ccc;
+	padding: 10px 10px 0px 0px;
+}
+
+/*用户聊天样式*/
+.p_left_chat {
+	
+}
+
+.p_left_chat_user {
+	text-align: left;
+}
+
+.p_left_chat_user_head {
+	float: left;
+	width: 60px;
+}
+
+.p_left_chat_user_head_img {
+	border-radius: 20px;
+	padding-left: 5px;
+}
+
+.p_left_chat_user_background_triangle {
+	float: left;
+	width: 11px;
+	height: 15px;
+	background: url(../images/customerwechat/bai_jiao.jpg) scroll no-repeat 0
+		0;
+	margin-top: 10px;
+	z-index: 9999;
+}
+
+.p_left_chat_user_background_content {
+	float: left;
+	width: 70%;
+}
+
+.p_left_chat_user_background_content_style {
+	float: left;
+	width: auto;
+	background-color:#fcfafa ;
+	border: #e3e3e3 solid 1px;
+	padding: 6px;
+	border-radius: 10px;
+}
+
+.photos_record img{width:100px;}
+.photos_new img{width:100px;}
+
+.p_left_chat_user_createtime {
+	float: left;
+	width: auto;
+}
+/*客服聊天样式*/
+.p_left_chat_customerservice {
+	clear: both;
+	text-align: right;
+}
+
+.p_left_chat_customerservice_head {
+	float: right;
+	width: 60px;
+}
+
+.p_left_chat_customerservice_head_img {
+	border-radius: 20px;
+	padding-right: 5px;
+}
+
+.p_left_chat_customerservice_background_triangle {
+	float: right;
+	width: 11px;
+	height: 15px;
+	background: url(../images/customerwechat/lv_jiao.jpg) scroll no-repeat
+		0 0;
+	margin-top: 10px;
+	z-index: 9999;
+}
+
+.p_left_chat_customerservice_background_content {
+	float: right;
+	width: 70%;
+	text-align: right;
+	z-index: 9998;
+}
+
+.p_left_chat_customerservice_background_content_style {
+	float: right;
+	width: auto;
+	background-color: #9fe659;
+	border: #e3e3e3 solid 1px;
+	padding: 10px;
+	text-align: left;
+	border-radius: 10px;
+}
+.p_left_chat_customerservice_createtime {
+	float: right;
+	width: auto;
+}
+/*----------right customerchat_main----------end */
+
+/*----------history customerchat----------start*/
+/*发送窗口样式*/
+.h_left_historychatcontent{
+	height: 600px;
+}
+
+/*----------history customerchat----------end*/

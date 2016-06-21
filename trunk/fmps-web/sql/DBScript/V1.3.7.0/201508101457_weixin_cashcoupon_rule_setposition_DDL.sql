@@ -1,0 +1,1 @@
+UPDATE weixin_cashcoupon_rule SET `position`='1000_10000' WHERE  `id`='10000000003';

@@ -1,0 +1,2 @@
+insert into t_s_type (id, typecode, typename, typepid, typegroupid) VALUES ('8a828e5050da7bd20150da937bcb0005','福州市','福州市',null,'8a828e4f4e4cddd0014e4ce380300001');
+insert into t_s_type (id, typecode, typename, typepid, typegroupid) VALUES ('8a828e5050da7bd20150da93b9b40007','成都市','成都市',null,'8a828e4f4e4cddd0014e4ce380300001');

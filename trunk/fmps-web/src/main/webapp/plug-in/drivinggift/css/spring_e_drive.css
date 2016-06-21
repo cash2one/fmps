@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	margin:0;
+	max-width:640px;
+	font-family:"黑体";
+	background:#a90101 url(../images/spring_e_index_bg.jpg)  no-repeat left top; 
+	background-size:contain; 
+	height:auto;
+}
+@media screen and (min-width:640px){ body{ height:900px; background-size:640px 900px;}}
+img {
+	box-sizing: border-box;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	border: 0px none;
+}
+a{ color: #fff; text-decoration: none;}
+a:hover{ color: #fff; text-decoration: none;}
+.spring_center{ margin:0 auto; width:87%; height:235px; background:#fff; filter:alpha(opacity:50);opacity:0.5; border-radius:10px; margin-top:215px;}
+@media screen and (min-width:360px){ .spring_center{margin-top:230px;}}
+@media screen and (min-width:375px){ .spring_center{margin-top:245px; height:260px;}}
+@media screen and (min-width:384px){ .spring_center{margin-top:250px;}}
+@media screen and (min-width:414px){ .spring_center{margin-top:265px; height:270px;}}
+@media screen and (min-width:640px){ .spring_center{margin-top:400px; height:435px;}}
+.spring_center_img{ text-align:center; width:60%; position:absolute; top:20px; left:20%;}
+@media screen and (min-width:360px){ .spring_center_img{top:14px; left:20%;}}
+@media screen and (min-width:375px){ .spring_center_img{top:25px; left:20%;}}
+@media screen and (min-width:384px){ .spring_center_img{top:25px; left:20%;}}
+@media screen and (min-width:414px){ .spring_center_img{top:25px; left:20%;}}
+@media screen and (min-width:640px){ .spring_center_img{top:70px; left:105px; width:67%;}}
+.spring_center_img .nbsp{ height:15px;}
+.receive{ background:#095dda; border-radius:5px; text-align:center; height:45px; line-height:45px; color:#fff; font-size:16px;}
+.receive_1{ background:#4485f2; border-radius:5px; text-align:center; height:45px; line-height:45px; color:#fff; font-size:24px;}
+.ticket_text{ position:absolute; top:25px; left:30px; color:#fe6000; font-size:26px;}
+@media screen and (min-width:360px){ .ticket_text{font-size:30px;}}
+@media screen and (min-width:375px){ .ticket_text{font-size:30px;}}
+@media screen and (min-width:384px){ .ticket_text{font-size:30px;}}
+@media screen and (min-width:414px){ .ticket_text{font-size:34px;}}
+@media screen and (min-width:640px){ .ticket_text{font-size:50px;}}
+@media screen and (min-width:769px){ .ticket_text{font-size:60px; top:50px;}}
+.middle .left{ width:55%; float:left; background:#fcb82c; border-radius:5px; text-align:center; height:45px; line-height:45px; color:#fff; margin-right:5%;}
+.middle .right{ width:40%; float:left; background:#fcb82c; border-radius:5px; text-align:center; height:45px; line-height:45px; color:#fff;}
+.e_regular {
+	width:100%;
+	height:auto;
+	clear:both;
+}
+.e_regular_title {
+	padding:10px;
+	width:88%;
+	margin:0 auto;
+	color:#FFFFFF;
+	font-size:16px;
+}
+.e_regular_title_center {
+	width:80%;
+	margin:0 auto;
+	color:#FFFFFF;
+	font-size:12px;
+	border:1px dotted #fff;
+	padding:10px;
+	line-height:20px;
+}
+.e_regular_title_xian {
+	width:80%;
+	margin:0 auto;
+	border-bottom:1px dotted #fff;
+	padding:10px;
+	height:10px;
+}
+.e_regular_list {
+	width:100%;
+	float:left;
+	margin:0 auto;
+	font-size:12px;
+	color:#fff;
+	padding-bottom:5px;
+	padding-top:5px;
+}
+.e_regular_list .img {
+	width:20%;
+	border-radius:10px;
+	float:left;
+	text-align:center;
+}
+.e_regular_list .name {
+	width:30%;
+	float:left;
+	text-align:left;
+	padding-top:7px;
+}
+.e_regular_list .time {
+	width:30%;
+	float:left;
+	padding-top:7px;
+}
+.e_regular_list .price {
+	width:20%;
+	float:left;
+	padding-top:7px;
+	text-align:center;
+}

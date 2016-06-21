@@ -1,0 +1,3 @@
+﻿
+update `webservice_client_management`
+set token='OEJFOPIYLPIWQMQC',AESKey='JBUKHDTBUOOXVBWCIHVHVLZSHTZISIJEWDCFHZHSUDE' where id='8a8192d849f4ff9e0149f505cb5c0004';

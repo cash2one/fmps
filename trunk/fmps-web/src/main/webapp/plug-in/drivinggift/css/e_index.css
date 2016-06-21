@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+
+  body {
+	margin:0;
+	max-width:640px;
+	font-family:"黑体";
+	background-color:#667884;
+}
+img {
+	box-sizing: border-box;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	border: 0px none;
+}
+.e_regular {
+	background-color:#667884;
+	width:100%;
+	height:auto;
+	clear:both;
+}
+.e_regular_title {
+	padding:10px;
+	width:88%;
+	margin:0 auto;
+	color:#FFFFFF;
+	font-size:16px;
+}
+.e_regular_title_center {
+	width:80%;
+	margin:0 auto;
+	color:#FFFFFF;
+	font-size:12px;
+	border:1px dotted #fff;
+	padding:10px;
+	line-height:20px;
+}
+.e_regular_title_xian {
+	width:80%;
+	margin:0 auto;
+	border-bottom:1px dotted #fff;
+	padding:10px;
+	height:10px;
+}
+.e_regular_list {
+	width:100%;
+	float:left;
+	background-color:#667884;
+	margin:0 auto;
+	font-size:12px;
+	color:#fff;
+	padding-bottom:5px;
+	padding-top:5px;
+}
+.e_regular_list .img {
+	width:20%;
+	border-radius:10px;
+	float:left;
+	text-align:center;
+}
+.e_regular_list .name {
+	width:30%;
+	float:left;
+	text-align:left;
+	padding-top:7px;
+}
+.e_regular_list .time {
+	width:30%;
+	float:left;
+	padding-top:7px;
+}
+.e_regular_list .price {
+	width:20%;
+	float:left;
+	padding-top:7px;
+	text-align:center;
+}

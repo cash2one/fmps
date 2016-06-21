@@ -1,0 +1,1 @@
+ALTER TABLE `weixin_policy` ADD COLUMN `operateCode` VARCHAR(100) NULL DEFAULT NULL COMMENT '出单人员' AFTER `paytime`;

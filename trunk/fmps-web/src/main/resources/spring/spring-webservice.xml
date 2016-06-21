@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd"
+	default-autowire="byName" default-lazy-init="false">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+<!-- 
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+ -->
+
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+ 
+	<jaxws:endpoint id="webServiceHelloWorld" address="/hello"
+		implementor="#helloService" />
+	
+	<jaxws:server id="helloworldWS" address="/helloWS" >
+		<jaxws:serviceBean>
+			<ref bean="helloService" />
+		</jaxws:serviceBean>
+	</jaxws:server>
+	
+	<bean id="helloService" class="cn.com.fubon.webservice.impl.HelloWorldService">
+	</bean>
+
+	
+	<jaxws:endpoint id="webServiceServer" implementor="cn.com.fubon.webservice.server.impl.WebServiceServerImpl"
+	 address="/FmpsService"/>
+	
+	<!-- fmps服务端webservice end -->
+	                           
+<bean id="weixinBindResponseHandler" 
+		class="cn.com.fubon.webservice.externl.coresystem.resphandler.WeixinBindWSResponseHandler" />
+<bean id="weixinNewCarResponseHandler" 
+		class="cn.com.fubon.webservice.externl.coresystem.resphandler.WeixinNewCarResponseHandler" />
+<bean id="getPayInfoTelesaleResponseHandler" 
+		class="cn.com.fubon.webservice.externl.telesalesystem.resphandler.GetPayInfoTelesaleResponseHandler" />
+<bean id="CheckPayCodeStatusTelesaleResponseHandler" 
+		class="cn.com.fubon.webservice.externl.telesalesystem.resphandler.CheckYanZhengMaTelesaleResponseHandler" />
+<bean id="updatePayInfoTelesaleResponseHandler" 
+		class="cn.com.fubon.webservice.externl.telesalesystem.resphandler.UpdatePayInfoTelesaleResponseHandler" />
+<bean id="updateFromWxClientResponseHandler" 
+		class="cn.com.fubon.webservice.externl.telesalesystem.resphandler.UpdateFromWxClientResponseHandler" />		
+<bean id="ReceivePayCodeStatusTelesaleResponseHandler" 
+		class="cn.com.fubon.webservice.externl.telesalesystem.resphandler.ReceivePayCodeStatusTelesaleResponseHandler" />
+
+<bean id="getReportsClaimResponseHandler" class="cn.com.fubon.webservice.externl.coresystem.resphandler.GetReportsClaimResponseHandler" />
+<bean id="getPictureClaimResponseHandler" class="cn.com.fubon.webservice.externl.coresystem.resphandler.GetPictureClaimResponseHandler" />
+<bean id="claimFeeConfirmedClaimResponseHandler" class="cn.com.fubon.webservice.externl.coresystem.resphandler.ClaimFeeConfirmedClaimResponseHandler" />
+
+<bean id="getNotCarReportsClaimResponseHandler" class="cn.com.fubon.webservice.externl.coresystem.resphandler.GetNotCarReportsClaimResponseHandler" />
+<bean id="getNotCarPictureClaimResponseHandler" class="cn.com.fubon.webservice.externl.coresystem.resphandler.GetNotCarPictureClaimResponseHandler" />
+
+<!-- webservice server handler -->	
+<bean id="client100ServerHandler" class="cn.com.fubon.webservice.server.handler.Client100ServerHandler" />	
+<!-- webservice server handler -->		
+
+	<!-- 核心系统微信绑定服务客户端 -->	
+	<bean id="coreosWSClientWeixinBind" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${coreosWSClientWeixinBindEntryUrl}" />
+		  <property name="wsMethodName" value="${coreosWSClientWeixinBindMethodName}" />
+		  <property name="externlRequestClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.WeixinBindRequest" />
+		  <property name="externlResponseClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.CommonResponse" />
+		   <property name="asyncInvoke" value="true" />
+		  <property name="responseHandler" ref="weixinBindResponseHandler" />
+		  <property name="targetNamespace" value="${coreosWSClientTargetNamespace}" />
+	</bean>
+	
+	<!-- 核心系统微信新车上牌 服务客户端 -->	
+	<bean id="coreosWSClientNewCar" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${coreosWSClientNewCarEntryUrl}" />
+		  <property name="wsMethodName" value="${coreosWSClientNewCarMethodName}" />
+		  <property name="externlRequestClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.WeixinNewCarRequest" />
+		  <property name="externlResponseClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.CommonResponseNewCar" />
+		   <property name="asyncInvoke" value="false" />
+		  <property name="responseHandler" ref="weixinNewCarResponseHandler" />
+		  <property name="targetNamespace" value="${coreosWSClientTargetNamespace}" />
+	</bean>
+	
+	<!-- Dozer Mapper Bean -->
+	<bean id="dozerMapper" class="org.dozer.spring.DozerBeanMapperFactoryBean" scope="singleton">
+		<property name="mappingFiles" value="classpath*:/bean-mapper/*.xml"></property>
+	</bean>
+	
+	<!-- 公共服务获取商品信息服务客户端 -->	
+	<bean id="telesaleWSClientGetPayInfo" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${telesaleWSClientEntryUrl}" />
+		  <property name="wsMethodName" value="${telesaleWSClientGetPayInfoMethodName}" />
+		  <property name="asyncInvoke" value="false" />
+		  <property name="telesaleResponseHandler" ref="getPayInfoTelesaleResponseHandler" />
+		   <property name="targetNamespace" value="${telesaleWSClientTargetNamespace}" />
+	</bean>
+	<!-- 公共服务支付码验证服务客户端 -->	
+	<bean id="telesaleWSClientCheckPayCode" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${telesaleWSClientEntryUrl}" />
+		  <property name="wsMethodName" value="${telesaleWSClientCheckYanZhengMaMethodName}" />
+		  <property name="asyncInvoke" value="false" />
+		  <property name="telesaleResponseHandler" ref="CheckPayCodeStatusTelesaleResponseHandler" />
+		   <property name="targetNamespace" value="${telesaleWSClientTargetNamespace}" />
+	</bean>
+	
+	<!-- 公共服务支付完成更新服务客户端 -->	
+	<bean id="telesaleWSClientReceivePayCodeStatus" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${telesaleWSClientEntryUrl}" />
+		  <property name="wsMethodName" value="${telesaleWSClientReceivePayCodeStatusMethodName}" />
+		  <property name="asyncInvoke" value="true" />
+		  <property name="telesaleResponseHandler" ref="ReceivePayCodeStatusTelesaleResponseHandler" />
+		   <property name="targetNamespace" value="${telesaleWSClientTargetNamespace}" />
+	</bean>
+	
+	<!-- 公共服务支付结果更新服务客户端 -->	
+	<bean id="telesaleWSClientUpdatePayInfo" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${telesaleWSClientEntryUrl}" />
+		  <property name="wsMethodName" value="${telesaleWSClientUpdatePayInfoMethodName}" />
+		  <property name="asyncInvoke" value="true" />
+		  <property name="telesaleResponseHandler" ref="updatePayInfoTelesaleResponseHandler" />
+		   <property name="targetNamespace" value="${telesaleWSClientTargetNamespace}" />
+	</bean>
+
+   <!-- 电销阅读条款反馈接口 -->	
+	<bean id="clauseReadingWSClient" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${clausereadingWSClientEntryUrl}" />
+		  <property name="wsMethodName" value="${clausereadingWSClientUpdateFromWxClientMethodName}" />
+		  <property name="asyncInvoke" value="false" />
+		  <property name="telesaleResponseHandler" ref="updateFromWxClientResponseHandler" />
+		   <property name="targetNamespace" value="${clausereadingWSClientTargetNamespace}" />
+	</bean>
+
+	<!-- 理赔系统微信客户端 -->	
+	<bean id="claimWSClientGetReports" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${claimWSClientGetReportsEntryUrl}" />
+		  <property name="wsMethodName" value="${claimWSClientGetReportsMethodName}" />
+		  <property name="externlRequestClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.ClaimRequest" />
+		  <property name="externlResponseClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.ClaimResponse" />
+		  <property name="asyncInvoke" value="false" />
+		  <property name="responseHandler" ref="getReportsClaimResponseHandler" />
+		  <property name="targetNamespace" value="${claimWSClientTargetNamespace}" />
+	</bean>	
+	
+	<!-- 理赔照片信息发核心 -->	
+	<bean id="claimWSClientGetPicture" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${claimWSClientGetPictureEntryUrl}" />
+		  <property name="wsMethodName" value="${claimWSClientGetPictureMethodName}" />
+		  <property name="externlRequestClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.ClaimRequest" />
+		  <property name="externlResponseClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.ClaimResponse" />
+		  <property name="asyncInvoke" value="false" />
+		  <property name="responseHandler" ref="getPictureClaimResponseHandler" />
+		  <property name="targetNamespace" value="${claimWSClientGetPictureTargetNamespace}" />
+	</bean>	
+	
+	<!-- 理赔金额确认成功 -->	
+	<bean id="claimWSClientClaimFeeConfirmed" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${claimWSClientClaimFeeConfirmedEntryUrl}" />
+		  <property name="wsMethodName" value="${claimWSClientClaimFeeConfirmedMethodName}" />
+		  <property name="externlRequestClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.ClaimRequest" />
+		  <property name="externlResponseClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.ClaimResponse" />
+		  <property name="asyncInvoke" value="false" />
+		  <property name="responseHandler" ref="claimFeeConfirmedClaimResponseHandler" />
+		  <property name="targetNamespace" value="${claimWSClientClaimFeeConfirmedTargetNamespace}" />
+	</bean>	
+	
+	<!-- 非车理赔系统微信客户端 -->	
+	<bean id="claimWSClientGetNotCarReports" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${claimWSClientGetNotCarReportsEntryUrl}" />
+		  <property name="wsMethodName" value="${claimWSClientGetNotCarReportsMethodName}" />
+		  <property name="externlRequestClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.ClaimRequest" />
+		  <property name="externlResponseClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.ClaimNotCarResponse" />
+		  <property name="asyncInvoke" value="false" />
+		  <property name="responseHandler" ref="getNotCarReportsClaimResponseHandler" />
+		  <property name="targetNamespace" value="${claimWSClientTargetNamespace}" />
+	</bean>	
+	
+	<!-- 非车理赔照片信息发核心 -->	
+	<bean id="claimWSClientGetNotCarPicture" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${claimWSClientGetNotCarPictureEntryUrl}" />
+		  <property name="wsMethodName" value="${claimWSClientGetNotCarPictureMethodName}" />
+		  <property name="externlRequestClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.ClaimNotCarRequest" />
+		  <property name="externlResponseClassName" value="cn.com.fubon.webservice.externl.coresystem.entity.ClaimResponse" />
+		  <property name="asyncInvoke" value="true" />
+		  <property name="responseHandler" ref="getNotCarPictureClaimResponseHandler" />
+		  <property name="targetNamespace" value="${claimWSClientGetNotCarPictureTargetNamespace}" />
+	</bean>	
+	
+	<!-- 维修厂:新增评价 -->
+	<bean id="addEvaluation" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${RepairWSClientGetRepairevaluationUrl}" />
+		  <property name="wsMethodName" value="add" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	<!-- 维修厂:获取维修厂列表 -->
+	<bean id="repairPlatformByArea" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${RepairWSClientGetRepairUrl}" />
+		  <property name="wsMethodName" value="getlist" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	<!-- 维修厂:获取单个维修厂 -->
+	<bean id="repairEntityResponse" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${RepairWSClientGetRepairUrl}" />
+		  <property name="wsMethodName" value="getSingle" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	 <!-- 维修厂:提交案件列表 -->
+	<bean id="caseListRequest" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${RepairWSClientGetRepairscanQrCodeUrl}" />
+		  <property name="wsMethodName" value="getCaseList" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	<!-- 发送核赔金额确认通知给企业号 -->
+	<bean id="confirmUnderwriting" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${ConfirmUnderwritingUrl}" />
+		  <property name="wsMethodName" value="sendMessage" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	<!-- 维修厂:依据抵用券ID获取维修厂列表 -->
+	<bean id="repairPlatformByGifeSet" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${RepairWSClientGetRepairUrl}" />
+		  <property name="wsMethodName" value="getmclist" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	<!-- 维修厂:依据抵用券ID获取券使用详情 -->
+	<bean id="giftSetInstructions" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${GiftSetInstructionsUrl}" />
+		  <property name="wsMethodName" value="querydesc" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	<!-- 双11活动-获取维修厂活动券详情信息接口 -->
+	<bean id="getGiftSetInfo" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${Dobule11GiftSetUrl}" />
+		  <property name="wsMethodName" value="getGiftSetInfo" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	<!-- 双11活动-领用活动券接口 -->
+	<bean id="insertGiftSetDetail" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${Dobule11GiftSetUrl}" />
+		  <property name="wsMethodName" value="insertGiftSetDetail" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	<!-- 双11活动-更多礼券接口 -->
+	<bean id="getMoreGiftSetByCountyCode" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${Dobule11GiftSetUrl}" />
+		  <property name="wsMethodName" value="getMoreGiftSetByCountyCode" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+
+    <!--获取保单信息接口 -->
+	<bean id="policyInformationAcquisition" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${policyInformationUrl}" />
+		  <property name="wsMethodName" value="getPolicyInfo" />
+		  <property name="restResponseHandler" ref="policyInformationResponseHandler" />
+	</bean>
+	
+	<!--承保失败后发送报文给企业号 -->
+	<bean id="postMessageToFcps" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${ConfirmUnderwritingUrl}" />
+		  <property name="wsMethodName" value="postMessage" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	<!--定时查询未发送成功的报文从新发送 -->
+	<bean id="resendRestWebServiceClient" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${RepairWSClientGetRepairevaluationUrl}" />
+		  <property name="wsMethodName" value="add" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	<!--获取保单号接口 -->
+	<bean id="updatePolicyInformation" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${policyInformationUrl}" />
+		  <property name="wsMethodName" value="updatePolicy" />
+		  <property name="restResponseHandler" ref="addEvaluationResponseHandler" />
+	</bean>
+	
+	<!--爱车之家首页广告获取 -->
+	<bean id="advertisementList" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${MerchantUrl}" />
+		  <property name="wsMethodName" value="getAdvertisementList" />
+		  <property name="restResponseHandler" ref="AddCarHomeResponseHandler" />
+	</bean>
+	
+	<!--爱车之家首页精品获取 -->
+	<bean id="recommendList" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${MerchantUrl}" />
+		  <property name="wsMethodName" value="getRecommendList" />
+		  <property name="restResponseHandler" ref="AddCarHomeResponseHandler" />
+	</bean>
+	
+	<!--爱车之家首页商家获取 -->
+	<bean id="recommendRepairList" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${MerchantUrl}" />
+		  <property name="wsMethodName" value="getRecommendRepairList" />
+		  <property name="restResponseHandler" ref="AddCarHomeResponseHandler" />
+	</bean>
+	
+	<!--爱车之家查询数据 -->
+	<bean id="carHomeSearch" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${MerchantUrl}" />
+		  <property name="wsMethodName" value="getAllRepairList" />
+		  <property name="restResponseHandler" ref="addCarHomeSearchResponseHandler" />
+	</bean>
+	<!--爱车之家：获取4S店厂商列表-->
+	<bean id="carHome4sFactory" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${MerchantUrl}" />
+		  <property name="wsMethodName" value="get4SRepairList" />
+		  <property name="restResponseHandler" ref="addCarHomeSearchResponseHandler" />
+	</bean>
+	<!--爱车之家：获取维修美容厂商列表-->
+	<bean id="carHomeRepairFactory" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${MerchantUrl}" />
+		  <property name="wsMethodName" value="getRepairList" />
+		  <property name="restResponseHandler" ref="addCarHomeSearchResponseHandler" />
+	</bean>
+	<!--爱车之家：获取其他服务商家列表-->
+	<bean id="carHomeOtherServices" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${MerchantUrl}" />
+		  <property name="wsMethodName" value="getOtherRepairList" />
+		  <property name="restResponseHandler" ref="addCarHomeSearchResponseHandler" />
+	</bean>
+	
+	<!--爱车之家洗车专区信息获取 -->
+	<bean id="carwashmerchantList" class="cn.com.fubon.rest.service.impl.RestWebServiceClient">
+		  <property name="entryUrl" value="${MerchantUrl}" />
+		  <property name="wsMethodName" value="getWashRepairList" />
+		  <property name="restResponseHandler" ref="addCarHomeSearchResponseHandler" />
+	</bean>
+	
+	<!--加油宝机构查询 -->
+	<bean id="getGasolineGiftOrganization" class="cn.com.fubon.rest.service.impl.RestWebServiceGasolineGiftClient">
+		  <property name="url" value="${oilcardOrganizationUrl}" />
+		  <property name="secretKey" value="${oilcardsecretKey}" />		
+	</bean>
+	
+	<!--加油宝申请 -->
+	<bean id="getGasolineGiftCar" class="cn.com.fubon.rest.service.impl.RestWebServiceGasolineGiftClient">
+		  <property name="url" value="${oilcardRegisterUrl}" />
+		  <property name="secretKey" value="${oilcardsecretKey}" />		
+	</bean>
+	
+	<!--单个加油宝查询 -->
+	<bean id="queryGasolineGiftCar" class="cn.com.fubon.rest.service.impl.RestWebServiceGasolineGiftClient">
+		  <property name="url" value="${oilcardQueryUrl}" />
+		  <property name="secretKey" value="${oilcardsecretKey}" />		
+	</bean>
+	
+	<!--按天加油宝查询 -->
+	<bean id="queryByDayGasolineGiftCar" class="cn.com.fubon.rest.service.impl.RestWebServiceGasolineGiftClient">
+		  <property name="url" value="${oilcardQueryByDayUrl}" />
+		  <property name="secretKey" value="${oilcardsecretKey}" />		
+	</bean>
+
+	<bean id="addEvaluationResponseHandler" class="cn.com.fubon.rest.handler.AddEvaluationResponseHandler" />	
+	<bean id="policyInformationResponseHandler" class="cn.com.fubon.microshop.service.PolicyInformationResponseHandler" />
+	<bean id="AddCarHomeResponseHandler" class="cn.com.fubon.rest.handler.AddCarHomeResponseHandler" />		
+	<bean id="addCarHomeSearchResponseHandler" class="cn.com.fubon.rest.handler.AddCarHomeSearchResponseHandler" />
+	
+	<!-- 微店：承保 -->
+	<bean id="coreosWSClientUnderwriteMicroShop" class="cn.com.fubon.webservice.MainWebServiceClient">
+		  <property name="entryUrl" value="${coreosWSClientUnderwriteMicroShopEntryUrl}" />
+		  <property name="wsMethodName" value="${coreosWSClientUnderwriteMicroShopMethodName}" />
+		  <property name="externlRequestClassName" value="cn.com.fubon.webservice.externl.coresystemUnderwrite.entity.UnderwriteTransaction" />
+		  <property name="externlResponseClassName" value="cn.com.fubon.webservice.externl.coresystemUnderwrite.entity.response.UnderwriteResponse" />
+		  <property name="responseHandler" ref="coreUnderwriteResponseHandler" />
+		  <property name="asyncInvoke" value="false" />
+		  <property name="targetNamespace" value="${coreosWSClientUnderwriteMicroShopTargetNamespace}" />
+	</bean>
+	<bean id="coreUnderwriteResponseHandler" class="cn.com.fubon.webservice.externl.coresystem.resphandler.CoreUnderwriteResponseHandler" />
+	
+</beans>

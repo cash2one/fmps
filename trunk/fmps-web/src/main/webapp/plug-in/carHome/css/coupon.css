@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+   body{ 	
+    margin:0;
+	max-width:640px;
+	font-family: "黑体" ; 
+	background-color:#e93131; height:700px; }
+	@media screen and (min-width:600px) {body { min-height:900px; } }
+   img {
+	box-sizing: border-box;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	border: 0px none;
+}
+.red_money{ position:absolute; top:170px; left:28%; color:#fff; font-size:50px; font-family:Helvetica, ;}
+@media screen and (min-width:360px) {.red_money { top:28%; left:28%; font-size:50px; } }
+@media screen and (min-width:375px) {.red_money { top:28.5%; left:28%; font-size:50px; } }
+@media screen and (min-width:384px) {.red_money { top:29%; left:28%; font-size:50px; } }
+@media screen and (min-width:412px) {.red_money { top:29%; left:28%; font-size:68px; } }
+@media screen and (min-width:600px) {.red_money { top:34%; left:28%; font-size:88px; } }
+@media screen and (min-width:640px) {.red_money { top:350px; left:28%; font-size:88px; } }
+@media screen and (min-width:768px) {.red_money { top:34%; left:23%; font-size:88px; } }
+@media screen and (min-width:960px) {.red_money { top:58%; left:19%; font-size:88px; } }
+@media screen and (min-width:1024px) {.red_money { top:350px; left:18%; font-size:88px; } }
+@media screen and (min-width:1280px) {.red_money { top:350px; left:15%; font-size:88px; } }
+.red_center{ margin:0 auto; width:90%;}
+.red_title{ background-color:#551314; width:70px; color:#f3cf2a; text-align:center; border-radius: 3px; font-size:14px; padding:5px; margin-top:25px;}
+.red_text{ text-align:left; color:#fff; font-size:15px; padding-top:10px; line-height:23px;}
+.red_text .color{ color:#fcff00;}
+.red_bottom{position:fixed; bottom:0; left:0; width:100%;}

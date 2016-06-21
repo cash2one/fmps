@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd
+         http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd ">
+	<!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
+	<!-- 加载controller的时候,不加载service,因为此时事物并未生效,若此时加载了service,那么事物无法对service进行拦截 -->
+	<context:component-scan base-package="org.jeecgframework.core.*,org.jeecgframework.web.*,weixin.*, cn.com.fubon.fo.*,cn.com.fubon.handler.*, cn.com.fubon.bo.*,cn.com.fubon.transaction.*,cn.com.fubon.common.*,cn.com.fubon.pay.*
+	,cn.com.fubon.wechatClaims.*,cn.com.fubon.huodong.*,cn.com.fubon.product.*,cn.com.fubon.fo.card.*,cn.com.fubon.fo.taitravel.*,cn.com.fubon.fo.totaiwan.*,cn.com.fubon.fo.cashcoupon.*,cn.com.fubon.reportform.user.*,cn.com.fubon.reportform.policy.*
+	,cn.com.fubon.businessReminder.*,cn.com.fubon.reportform.offlinepay.*,cn.com.fubon.microshop.*,cn.com.fubon.mailsending.*,test.*,cn.com.fubon.fo.claim.*">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+	
+	<!-- 引入属性文件 -->
+	<!-- <context:property-placeholder location="classpath:sysConfig.properties" /> -->
+		
+	<!-- ApplicationContext -->
+	<bean class="org.jeecgframework.core.util.ApplicationContextUtil"></bean>
+
+	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+	<bean id="mappingJacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/html;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射， 配置一个基于注解的定制的WebBindingInitializer，解决日期转换问题，方法级别的处理器映射 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="cacheSeconds" value="0" />
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter" /><!-- json转换器 -->
+			</list>
+		</property>
+		<property name="webBindingInitializer">
+			<bean class="org.jeecgframework.core.interceptors.MyWebBinding" />
+		</property>
+	</bean>
+	<!-- 默认的视图解析器 在上边的解析错误时使用 (默认使用html)- -->
+	<bean id="defaultViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:order="3">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="contentType" value="text/html" />
+		<property name="prefix" value="/webpage/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:defaultEncoding="UTF-8">
+		<property name="maxUploadSize">
+			<value>104857600</value>
+		</property>
+		<property name="maxInMemorySize">
+			<value>4096</value>
+		</property>
+	</bean>
+
+    <!-- Bean解析器,级别高于默认解析器,寻找bean对象进行二次处理 -->
+    <bean id="beanNameViewResolver"
+          class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0">
+    </bean>
+    <!-- Excel 处理 根据用户输入进行对象处理 -->
+    <bean id="jeecgExcelView" class="org.jeecgframework.poi.excel.view.JeecgSingleExcelView" />
+	<!-- 方言 -->
+	<bean id="dialect"
+		class="org.jeecgframework.core.common.hibernate.dialect.DialectFactoryBean">
+		<property name="dbType" value="${jdbc.dbType}" />
+	</bean>
+	<!-- 异常处理类 -->
+	<bean id="exceptionHandler"
+		class="org.jeecgframework.core.common.exception.MyExceptionHandler" />
+	<!-- 系统错误转发配置[并记录错误日志] -->
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="defaultErrorView" value="500"></property>   <!-- 默认为500，系统错误(error.jsp) -->
+		<property name="defaultStatusCode" value="404"></property>
+		<property name="statusCodes"><!-- 配置多个statusCode -->
+			<props>
+				<prop key="error">500</prop>  <!-- error.jsp -->
+				<prop key="error1">404</prop>    <!-- error1.jsp -->
+			</props>
+		</property>
+		<property name="exceptionMappings">
+			<props>
+				<!-- 这里你可以根据需要定义N多个错误异常转发 -->
+				<prop key="java.sql.SQLException">dbError</prop> <!-- 数据库错误(dbError.jsp) -->
+				<prop key="org.springframework.web.bind.ServletRequestBindingException">bizError</prop> <!-- 参数绑定错误(如：必须参数没传递)(bizError.jsp) -->
+				<prop key="java.lang.IllegalArgumentException">bizError</prop>  <!-- 参数错误(bizError.jsp) -->
+				<prop key="org.springframework.validation.BindException">bizError</prop>  <!-- 参数类型有误(bizError.jsp) -->
+				<prop key="java.lang.Exception">unknowError</prop>  <!-- 其他错误为'未定义错误'(unknowError.jsp) -->
+			</props>
+		</property>
+	</bean>
+	
+	
+		<!-- 请求拦截  guojunjie 2015.6.4 -->
+	<mvc:interceptors>
+		<!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 -->
+		<bean class="cn.com.fubon.fo.card.interceptor.TokenInterceptor"/>
+		<!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 
+		<mvc:interceptor>
+			<mvc:mapping path="/fo/cardController.do?saveCard"/>
+			<bean class="cn.com.fubon.fo.card.interceptor.TokenInterceptor"/>
+		</mvc:interceptor>
+		-->
+	</mvc:interceptors>
+	
+	
+	<!-- 拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="org.jeecgframework.core.interceptors.EncodingInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="org.jeecgframework.core.interceptors.AuthInterceptor">
+				<property name="excludeUrls">
+					<list>
+						<value>/loginController.do?goPwdInit</value>
+						<value>/loginController.do?pwdInit</value>
+						<value>/loginController.do?login</value>
+						<value>/loginController.do?checkuser</value>
+						<value>/loginController.do?checkSession</value>
+						<value>/loginController.do?message</value>
+						<value>/repairController.do**</value>
+						<value>/cmsMenuController.do?index</value>
+					    <value>/cmsArticleController.do**</value>
+					    <value>/cmsController.do?getMenuList</value>
+					    <value>/wechatController.do?wechat</value>
+					    <value>/zpController.do**</value>
+					    <value>/weixinCmsStyleController.do?upload</value>
+					    <value>/newsItemController.do?goContent</value>
+					    <!-- 保存用户 -->
+					    <value>/userController.do?saveUser</value>
+					    <value>/randCode.do?genCode</value>
+					    <value>/microShopController.do?getFmpsOpenId</value>
+					    <value>/fo/**</value>
+					    <value>/bo/**</value>
+					    <value>/pay/**</value>	
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>	
+		
+		<!-- 拦截器,获取openid -->
+		<mvc:interceptor>
+			<mvc:mapping path="/fo/**" />
+			<mvc:mapping path="/zpController.do**" />
+			<bean class="cn.com.fubon.interceptors.GetOpenidInterceptor">	
+				<property name="excludeUrls">
+					<list>	
+						<value>/fo/binded/customerHonorTitleController.do?method=customerHonorTitleAfter</value>
+					    <value>/fo/TotaiwanController.do?baoan</value>
+					    <value>/fo/repairFactoryController.do?method=historicalEvaluationajax</value>
+					    <value>/fo/repairFactoryController.do?method=qRcodeajax</value>
+					    <value>/fo/repairFactoryController.do?qPhoneRcodeajax</value>
+					    <value>/fo/repairFactoryController.do?getQRcode**</value>
+					    <!-- 进入地图页面 -->
+					    <value>/fo/repairPlatformController.do?method=goToMapPage**</value>
+					    <!-- 根据 地区 读取 维修厂商 列表 -->
+					    <value>/fo/repairPlatformController.do?getRepairPlatformByArea**</value>
+					    <!-- 理赔资料在线上传 -->
+					    <value>/fo/TotaiwanController.do?taiCollect</value>
+					    <value>/fo/TotaiwanController.do?uploadsuccess</value>
+					    <value>/fo/TotaiwanController.do?getStream**</value>
+					    <value>/fo/gasCardController.do?helpIndex</value>
+					    <value>/fo/gasCardController.do?help</value>
+					    <value>/fo/dobule11Controller.do?JsdkString</value>
+					    <value>/fo/repairFactoryController.do?method=goToGiftSetDetail</value>
+					    <value>/fo/repairFactoryController.do?method=repairMain</value>
+					    <value>/fo/repairFactoryController.do?method=receiveGiftSet</value>
+					    <value>/fo/binded/repairFactoryGiftController.do?moreGiftSet</value>
+					    <value>/fo/binded/repairFactoryGiftController.do?getmoreGiftSetByArea</value>
+					    <!-- 微店(获取条款列表不拦截openid)-->
+					    <value>/fo/cardController.do?microShopArticle</value>
+					    <value>/fo/lunarNewYearController.do?sharePage</value>
+					    <value>/fo/lunarNewYearController.do?JsdkString</value>
+					    <!-- 非车理赔资料上传 -->
+					    <value>/fo/notCarClaimController.do?getStream**</value>
+					    <value>/fo/binded/gasolinegift/gasolinegiftController/payNotify**</value>
+					</list>
+				</property>					
+			</bean>
+		</mvc:interceptor> 	
+		
+		<!-- 拦截器,确认客户已认证 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/fo/binded/**" />
+			<bean class="cn.com.fubon.interceptors.WeixinCustomerAuthInterceptor">	
+				<property name="excludeUrls">
+					<list>	
+						<value>/fo/binded/customerHonorTitleController.do?method=customerHonorTitleAfter</value>
+						<value>/fo/binded/womensDayCardController.do?method=womensDayIndexAfter</value>
+						<!-- 个人中心改版:个人中心首页,个人信息页和查看领用的保险卡都不需要认证即可访问 -->
+						<value>/fo/binded/personalCenterController.do?method=Index</value>
+						<value>/fo/binded/personalCenterController.do?PersonalInfo</value>
+						<value>/fo/binded/personalCenterController.do?CardIndex</value>
+						<!-- 个人中心首页，礼包不需要认证即可访问 -->
+						<value>/fo/binded/repairFactoryGiftController.do?**</value>
+						<!-- 个人中心首页，查看我的评价不需要认证即可访问 -->
+						<value>/fo/binded/personalCenterController.do?myEvaluation</value>
+						<!-- 进入评价页面不需要认证即可访问 -->
+						<value>/fo/repairFactoryController.do?method=evaluation</value>
+						<!-- 核赔确认不需要认证即可访问 -->
+						<value>/fo/binded/customerClaims/customerClaimsController.do?method=prepareConfirmClaimFee</value>
+						<value>/fo/binded/customerClaims/customerClaimsController.do?method=confirmClaimFee</value>
+						<!-- 加油宝首页不需要认证即可访问 -->
+						<!-- <value>/fo/binded/gasolinegift/gasolinegiftController**</value> -->
+						<value>/fo/binded/gasolinegift/gasolinegiftController.do?getTheHomePage</value>
+						<value>/fo/binded/gasolinegift/gasolinegiftController.do?backTheHomePage</value>
+						<value>/fo/binded/gasolinegift/gasolinegiftController.do?getMyGasolinegiftDetail</value>
+						<value>/fo/binded/personalCenter/orderController**</value>
+						<value>/fo/binded/gasolinegift/gasolinegiftController/payNotify**</value>	
+						<value>/fo/binded/gasolinegift/gasolinegiftController.do?get94ChannelPage</value>
+						<value>/fo/binded/gasolinegift/gasolinegiftController.do?isEligibility</value>	
+						<value>/fo/binded/gasolinegift/gasolinegiftController.do?oilCard</value>
+						<value>/fo/binded/gasolinegift/gasolinegiftController.do?checkPhone</value>
+						<value>/fo/binded/gasolinegift/gasolinegiftController.do?applyMyGasolinegift</value>					
+					</list>
+				</property>		
+			</bean>
+		</mvc:interceptor>
+		<!-- 
+		 <mvc:interceptor>
+			<mvc:mapping path="/fo/lunarNewYearController.do?sharePage**" />
+			<bean class="cn.com.fubon.interceptors.GetUnsubscribeOpenidInterceptor">	
+			<property name="excludeUrls">
+					<list>						
+					</list>
+			</property>	
+			</bean>
+		</mvc:interceptor>  
+	    -->
+	</mvc:interceptors>
+
+
+
+</beans>

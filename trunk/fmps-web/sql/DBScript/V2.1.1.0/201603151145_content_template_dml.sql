@@ -1,0 +1,1 @@
+﻿INSERT INTO `content_template` (`id`, `templatemsg`, `type`, `status`, `title`, `createtime`) VALUES ('125425522514524562', '非车理赔图片上传通知.报案号：{keyword0} .保单号：{keyword1} . 被保险人: {keyword2} . 案件描述: {keyword3}', '1', '1', '非车理赔图片上传通知', '2016-03-15 10:58:44');

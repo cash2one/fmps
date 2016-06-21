@@ -1,0 +1,1 @@
+rename table weixin_totaiwan_claim_image to weixin_claim_image;
